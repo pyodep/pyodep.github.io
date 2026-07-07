@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eunpyo Lee — Curriculum Vitae</title>
+<meta name="description" content="Curriculum Vitae of Eunpyo Lee — independent researcher in machine learning.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e6e6e6;
+    --link: #2a5db0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111214;
+      --fg: #e8e8e8;
+      --muted: #9a9a9a;
+      --line: #2a2b2e;
+      --link: #7aa2e8;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  .nav { font-size: 0.9rem; margin-bottom: 2rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.2rem;
+  }
+  .subtitle { color: var(--muted); margin: 0 0 0.9rem; }
+  .contact { font-size: 0.92rem; margin: 0 0 0.3rem; }
+  .contact a { margin-right: 0.2rem; }
+  .contact span.sep { color: var(--muted); margin-right: 0.2rem; }
+  .updated { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.5rem; }
+  h2 {
+    font-size: 1.0rem;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.35rem;
+    margin: 2.4rem 0 1rem;
+  }
+  p { margin: 0 0 1rem; }
+  .entry { margin-bottom: 1.15rem; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .entry-title { font-weight: 600; }
+  .entry-date { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  .entry-sub { color: var(--muted); font-size: 0.94rem; margin-top: 0.1rem; }
+  ul { margin: 0.35rem 0 0; padding-left: 1.15rem; }
+  li { margin-bottom: 0.55rem; }
+  ol.pubs { margin: 0; padding-left: 1.3rem; }
+  ol.pubs li { margin-bottom: 0.9rem; }
+  .paper-title { font-weight: 600; }
+  .paper-note { display: block; color: var(--muted); font-size: 0.9rem; margin-top: 0.1rem; }
+  .status { color: var(--muted); font-style: italic; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  @media print {
+    :root { --bg:#fff; --fg:#000; --muted:#444; --line:#bbb; --link:#000; }
+    .nav, .print-hide { display: none !important; }
+    main { max-width: none; padding: 0.2in 0; }
+    a { color: #000; }
+    h2 { margin-top: 1.4rem; }
+    .entry, ol.pubs li { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="nav print-hide"><a href="index.html">&larr; Home</a></p>
+
+  <h1>Eunpyo Lee <span style="font-weight:400;color:var(--muted);font-size:1.1rem;">(이은표)</span></h1>
+  <p class="subtitle">Curriculum Vitae &mdash; independent researcher in machine learning</p>
+  <p class="contact">
+    <a href="mailto:pyodep06@gmail.com">pyodep06@gmail.com</a> <span class="sep">·</span>
+    <a href="https://pyodep.github.io">pyodep.github.io</a> <span class="sep">·</span>
+    <a href="https://github.com/pyodep">github.com/pyodep</a> <span class="sep">·</span>
+    <a href="https://orcid.org/0009-0000-2185-2630">ORCID 0009-0000-2185-2630</a> <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/eunpyolee0621">LinkedIn</a>
+  </p>
+  <p class="updated">Updated July 2026</p>
+
+  <h2>Research Interests</h2>
+  <p>Machine learning interpretability, quantization and mixed-precision methods, measurement and
+  evaluation methodology, optimization, and handwritten mathematical expression recognition (HMER).
+  My work emphasizes rigorous measurement protocols and honest baselines for claims about how
+  model modifications affect internal computation.</p>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">Self-directed study &mdash; Machine Learning &amp; Deep Learning</span>
+      <span class="entry-date">2026 &ndash; Present</span>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">B.S. in Computer Engineering (in progress)</span>
+      <span class="entry-date">Apr 2025 &ndash; Present</span>
+    </div>
+    <div class="entry-sub">Academic Credit Bank System, National Institute for Lifelong Education (국가평생교육진흥원 학점은행제)</div>
+  </div>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">Korea Animation High School</span>
+      <span class="entry-date">Mar 2022 &ndash; Jan 2025</span>
+    </div>
+    <div class="entry-sub">Department of Computer Game Production (한국애니메이션고등학교 컴퓨터게임제작과) &mdash; Graduated</div>
+  </div>
+
+  <h2>Preprints &amp; Manuscripts</h2>
+  <ol class="pubs">
+    <li>
+      <span>Eunpyo Lee.</span>
+      <span class="paper-title">Behavior-Preserving Quantization Does Not Guarantee Circuit Preservation: A Measurement Protocol and a Case Study.</span>
+      <span class="paper-note">Quantization can preserve behavior while re-routing internal circuits.</span>
+      <span class="status">In preparation / under submission, 2026.</span>
+    </li>
+    <li>
+      <span>Eunpyo Lee.</span>
+      <span class="paper-title">Direction Ranks, Magnitude Allocates: Gradient Signals in Mixed-Precision Quantization.</span>
+      <span class="paper-note">Free magnitude baselines match gradient-direction signals for bit allocation.</span>
+      <span class="status">In preparation / under submission, 2026.</span>
+    </li>
+    <li>
+      <span>Eunpyo Lee.</span>
+      <span class="paper-title">Matched Nulls for Model-Modification Claims: A Protocol and Cross-Domain Audit.</span>
+      <span class="paper-note">Internal-change claims need behavior-matched null baselines.</span>
+      <span class="status">In preparation / under submission, 2026.</span>
+    </li>
+    <li>
+      <span>Eunpyo Lee.</span>
+      <span class="paper-title">Safety Is a Subspace, Not a Direction.</span>
+      <span class="paper-note">Adaptive un-alignment attacks evade single-direction monitors but share a low-dimensional subspace that generalizes to unseen attackers.</span>
+      <span class="status">In preparation / under submission, 2026.</span>
+    </li>
+    <li>
+      <span>Eunpyo Lee.</span>
+      <span class="paper-title">Recall-First Stroke Grouping: A 53K-Parameter Symbol-Candidate Proposal Stage for Graph-Based Online Handwritten Mathematical Expression Recognition.</span>
+      <span class="paper-note">A near-perfect-recall symbol-candidate proposal stage at 53K parameters.</span>
+      <span class="status">In preparation / under submission, 2026.</span>
+    </li>
+  </ol>
+
+  <h2>Research Experience</h2>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">Independent Researcher</span>
+      <span class="entry-date">2026 &ndash; Present</span>
+    </div>
+    <div class="entry-sub">Self-directed research in machine learning</div>
+    <ul>
+      <li>Developed measurement protocols and matched-null baselines for claims about how quantization
+      and other model modifications affect internal computation.</li>
+      <li>Studied safety-relevant representations as low-dimensional subspaces, including monitors
+      robust to adaptive un-alignment.</li>
+      <li>Built a graph-based online HMER pipeline with a lightweight, recall-first symbol-candidate
+      proposal stage.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">HMER pipeline</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <div class="entry-sub">Graph-based online handwritten mathematical expression recognition.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="entry-title">Typin</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <div class="entry-sub">Link-based knowledge management &amp; execution system (Electron, Turborepo).</div>
+  </div>
+
+  <footer>Eunpyo Lee · Curriculum Vitae · pyodep.github.io</footer>
+</main>
+</body>
+</html>
