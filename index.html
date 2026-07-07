@@ -45,9 +45,25 @@
     color: var(--muted);
     margin: 0 0 1.1rem;
   }
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 2.8rem;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    background: var(--line);
+  }
+  .hero-text { min-width: 0; }
   .links {
     font-size: 0.95rem;
-    margin-bottom: 2.8rem;
+    margin-bottom: 0;
   }
   .links a { margin-right: 0.25rem; }
   .links span { color: var(--muted); margin-right: 0.25rem; }
@@ -86,18 +102,26 @@
     color: var(--muted);
     font-size: 0.85rem;
   }
+  @media (max-width: 480px) {
+    .hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>Eunpyo Lee</h1>
-  <p class="subtitle">Conducting independent research in machine learning</p>
-  <p class="links">
-    <a href="mailto:pyodep06@gmail.com">Email</a> <span>·</span>
-    <a href="https://github.com/pyodep">GitHub</a> <span>·</span>
-    <a href="https://orcid.org/0009-0000-2185-2630">ORCID</a> <span>·</span>
-    <a href="https://www.linkedin.com/in/eunpyolee0621">LinkedIn</a>
-  </p>
+  <header class="hero">
+    <img class="avatar" src="profile.jpg" alt="Photograph of Eunpyo Lee" width="120" height="120">
+    <div class="hero-text">
+      <h1>Eunpyo Lee</h1>
+      <p class="subtitle">Conducting independent research in machine learning</p>
+      <p class="links">
+        <a href="mailto:pyodep06@gmail.com">Email</a> <span>·</span>
+        <a href="https://github.com/pyodep">GitHub</a> <span>·</span>
+        <a href="https://orcid.org/0009-0000-2185-2630">ORCID</a> <span>·</span>
+        <a href="https://www.linkedin.com/in/eunpyolee0621">LinkedIn</a>
+      </p>
+    </div>
+  </header>
 
   <p>I am an independent researcher in machine learning.</p>
   <p>My research interests include interpretability, quantization, measurement, optimization, and handwritten mathematical expression recognition (HMER).</p>
