@@ -2,36 +2,31 @@
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>푸리에 해석과 신호처리 · mathbrain</title>
-<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta name="description" content="수학을 공부하며 남긴 개념, 직관과 연결.">
 <meta property="og:title" content="푸리에 해석과 신호처리 · mathbrain">
-<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:description" content="수학을 공부하며 남긴 개념, 직관과 연결.">
 <meta property="og:type" content="article">
-<script>(function(){var t=localStorage.getItem('theme');
-if(t)document.documentElement.dataset.theme=t;})();</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="../assets/style.css"></head><body>
 <header class="top">
   <a class="home" href="../index.html">mathbrain</a>
-  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <nav><a href="../path.html">학습 경로</a></nav>
   <div class="search-wrap">
     <input id="q" type="search" placeholder="검색" autocomplete="off">
-    <button id="theme-btn" title="라이트/다크 전환">◐</button>
     <div id="results"></div>
   </div>
 </header>
 
 <main>
-<div class="crumb">Phase 9</div><h1>푸리에 해석과 신호처리</h1><div class="post-meta">장 3 · 개념 49 · 작성 0</div>
-<section class="ch-block"><div class="ch-head"><a href="50.%20%ED%91%B8%EB%A6%AC%EC%97%90%20%ED%95%B4%EC%84%9D.html">50. 푸리에 해석</a><span class="cnt">0/15 작성</span></div><div class="chips"><span title="작성 예정">주기함수와 삼각급수</span><span title="작성 예정">푸리에 급수</span><span title="작성 예정">복소 푸리에 급수</span><span title="작성 예정">디리클레 조건</span><span title="작성 예정">깁스 현상</span><span title="작성 예정">푸리에 변환과 역변환</span><span title="작성 예정">푸리에 변환의 성질</span><span title="작성 예정">합성곱 정리 (푸리에)</span><span title="작성 예정">파르세발 정리</span><span title="작성 예정">플랑셰렐 정리</span><span title="작성 예정">포아송 합 공식</span><span title="작성 예정">섀넌 샘플링 정리</span><span title="작성 예정">불확정성 원리</span><span title="작성 예정">주파수 영역</span><span title="작성 예정">스펙트럼 해석</span></div></section>
-<section class="ch-block"><div class="ch-head"><a href="51.%20%EC%8B%A0%ED%98%B8%EC%B2%98%EB%A6%AC.html">51. 신호처리</a><span class="cnt">0/19 작성</span></div><div class="chips"><span title="작성 예정">신호 (연속시간, 이산시간)</span><span title="작성 예정">시스템과 선형시불변(LTI) 시스템</span><span title="작성 예정">임펄스 응답</span><span title="작성 예정">합성곱</span><span title="작성 예정">샘플링</span><span title="작성 예정">나이퀴스트 정리</span><span title="작성 예정">에일리어싱</span><span title="작성 예정">Z-변환</span><span title="작성 예정">DFT</span><span title="작성 예정">FFT</span><span title="작성 예정">자기상관 함수</span><span title="작성 예정">정상성 (약정상, 강정상)</span><span title="작성 예정">Wiener-Khinchin 정리 (PSD = 자기상관의 푸리에 변환)</span><span title="작성 예정">파워 스펙트럼 밀도 (PSD)</span><span title="작성 예정">주기도 (periodogram)</span><span title="작성 예정">Welch 방법 (스펙트럼 추정)</span><span title="작성 예정">스펙트럼 누설</span><span title="작성 예정">필터 (저역, 고역, 대역통과)</span><span title="작성 예정">잡음과 SNR</span></div></section>
-<section class="ch-block"><div class="ch-head"><a href="52.%20%EC%8B%9C%EA%B0%84-%EC%A3%BC%ED%8C%8C%EC%88%98%20%ED%95%B4%EC%84%9D.html">52. 시간-주파수 해석</a><span class="cnt">0/15 작성</span></div><div class="chips"><span title="작성 예정">윈도우 함수 (직사각, Hann, Hamming, 가우시안)</span><span title="작성 예정">윈도우와 스펙트럼 누설의 관계</span><span title="작성 예정">STFT 정의</span><span title="작성 예정">역 STFT와 COLA 조건</span><span title="작성 예정">스펙트로그램</span><span title="작성 예정">시간-주파수 해상도 트레이드오프</span><span title="작성 예정">가보르 한계 (불확정성 원리의 시간-주파수 형태)</span><span title="작성 예정">Gabor 변환</span><span title="작성 예정">웨이블릿 변환 (CWT, DWT)</span><span title="작성 예정">Haar 웨이블릿, Morlet 웨이블릿</span><span title="작성 예정">멀티해상도 분석</span><span title="작성 예정">멜 스펙트로그램</span><span title="작성 예정">Cepstrum</span><span title="작성 예정">비정상 신호 해석 전략</span><span title="작성 예정">STFT vs 웨이블릿 비교</span></div></section>
+<div class="crumb">Phase 9</div><h1>푸리에 해석과 신호처리</h1><div class="post-meta">0/49 작성</div><section class="ch-block"><div class="ch-head"><a href="50.%20%ED%91%B8%EB%A6%AC%EC%97%90%20%ED%95%B4%EC%84%9D.html">푸리에 해석</a><span class="cnt">0/15</span></div><p class="cnotes"><span title="작성 예정">주기함수와 삼각급수</span><span class="sep">·</span><span title="작성 예정">푸리에 급수</span><span class="sep">·</span><span title="작성 예정">복소 푸리에 급수</span><span class="sep">·</span><span title="작성 예정">디리클레 조건</span><span class="sep">·</span><span title="작성 예정">깁스 현상</span><span class="sep">·</span><span title="작성 예정">푸리에 변환과 역변환</span><span class="sep">·</span><span title="작성 예정">푸리에 변환의 성질</span><span class="sep">·</span><span title="작성 예정">합성곱 정리 (푸리에)</span><span class="sep">·</span><span title="작성 예정">파르세발 정리</span><span class="sep">·</span><span title="작성 예정">플랑셰렐 정리</span><span class="sep">·</span><span title="작성 예정">포아송 합 공식</span><span class="sep">·</span><span title="작성 예정">섀넌 샘플링 정리</span><span class="sep">·</span><span title="작성 예정">불확정성 원리</span><span class="sep">·</span><span title="작성 예정">주파수 영역</span><span class="sep">·</span><span title="작성 예정">스펙트럼 해석</span></p></section>
+<section class="ch-block"><div class="ch-head"><a href="51.%20%EC%8B%A0%ED%98%B8%EC%B2%98%EB%A6%AC.html">신호처리</a><span class="cnt">0/19</span></div><p class="cnotes"><span title="작성 예정">신호 (연속시간, 이산시간)</span><span class="sep">·</span><span title="작성 예정">시스템과 선형시불변(LTI) 시스템</span><span class="sep">·</span><span title="작성 예정">임펄스 응답</span><span class="sep">·</span><span title="작성 예정">합성곱</span><span class="sep">·</span><span title="작성 예정">샘플링</span><span class="sep">·</span><span title="작성 예정">나이퀴스트 정리</span><span class="sep">·</span><span title="작성 예정">에일리어싱</span><span class="sep">·</span><span title="작성 예정">Z-변환</span><span class="sep">·</span><span title="작성 예정">DFT</span><span class="sep">·</span><span title="작성 예정">FFT</span><span class="sep">·</span><span title="작성 예정">자기상관 함수</span><span class="sep">·</span><span title="작성 예정">정상성 (약정상, 강정상)</span><span class="sep">·</span><span title="작성 예정">Wiener-Khinchin 정리 (PSD = 자기상관의 푸리에 변환)</span><span class="sep">·</span><span title="작성 예정">파워 스펙트럼 밀도 (PSD)</span><span class="sep">·</span><span title="작성 예정">주기도 (periodogram)</span><span class="sep">·</span><span title="작성 예정">Welch 방법 (스펙트럼 추정)</span><span class="sep">·</span><span title="작성 예정">스펙트럼 누설</span><span class="sep">·</span><span title="작성 예정">필터 (저역, 고역, 대역통과)</span><span class="sep">·</span><span title="작성 예정">잡음과 SNR</span></p></section>
+<section class="ch-block"><div class="ch-head"><a href="52.%20%EC%8B%9C%EA%B0%84-%EC%A3%BC%ED%8C%8C%EC%88%98%20%ED%95%B4%EC%84%9D.html">시간-주파수 해석</a><span class="cnt">0/15</span></div><p class="cnotes"><span title="작성 예정">윈도우 함수 (직사각, Hann, Hamming, 가우시안)</span><span class="sep">·</span><span title="작성 예정">윈도우와 스펙트럼 누설의 관계</span><span class="sep">·</span><span title="작성 예정">STFT 정의</span><span class="sep">·</span><span title="작성 예정">역 STFT와 COLA 조건</span><span class="sep">·</span><span title="작성 예정">스펙트로그램</span><span class="sep">·</span><span title="작성 예정">시간-주파수 해상도 트레이드오프</span><span class="sep">·</span><span title="작성 예정">가보르 한계 (불확정성 원리의 시간-주파수 형태)</span><span class="sep">·</span><span title="작성 예정">Gabor 변환</span><span class="sep">·</span><span title="작성 예정">웨이블릿 변환 (CWT, DWT)</span><span class="sep">·</span><span title="작성 예정">Haar 웨이블릿, Morlet 웨이블릿</span><span class="sep">·</span><span title="작성 예정">멀티해상도 분석</span><span class="sep">·</span><span title="작성 예정">멜 스펙트로그램</span><span class="sep">·</span><span title="작성 예정">Cepstrum</span><span class="sep">·</span><span title="작성 예정">비정상 신호 해석 전략</span><span class="sep">·</span><span title="작성 예정">STFT vs 웨이블릿 비교</span></p></section>
 </main>
-<footer>
-  <span>mathbrain — 수학 세컨드 브레인</span>
-  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
-</footer>
+<footer>© 2026 이은표</footer>
 <script>window.__ROOT="../";</script>
 <script src="../search-index.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>

@@ -3,13 +3,6 @@ document.querySelectorAll('[data-math]').forEach(function(el){
   try{katex.render(el.textContent,el,{displayMode:el.classList.contains('math-block'),throwOnError:false});}
   catch(e){}
 });
-(function(){var b=document.getElementById('theme-btn');if(!b)return;
-b.addEventListener('click',function(){
-  var h=document.documentElement,
-      cur=h.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'),
-      nx=cur==='dark'?'light':'dark';
-  h.dataset.theme=nx;localStorage.setItem('theme',nx);});
-})();
 (function(){
   var q=document.getElementById('q'),box=document.getElementById('results'),
       root=window.__ROOT||'',idx=window.__IDX||[],sel=-1;

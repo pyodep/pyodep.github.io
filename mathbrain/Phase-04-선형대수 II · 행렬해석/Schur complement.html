@@ -2,38 +2,34 @@
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Schur complement · mathbrain</title>
-<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta name="description" content="수학을 공부하며 남긴 개념, 직관과 연결.">
 <meta property="og:title" content="Schur complement · mathbrain">
-<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:description" content="수학을 공부하며 남긴 개념, 직관과 연결.">
 <meta property="og:type" content="article">
-<script>(function(){var t=localStorage.getItem('theme');
-if(t)document.documentElement.dataset.theme=t;})();</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="../assets/style.css"></head><body>
 <header class="top">
   <a class="home" href="../index.html">mathbrain</a>
-  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <nav><a href="../path.html">학습 경로</a></nav>
   <div class="search-wrap">
     <input id="q" type="search" placeholder="검색" autocomplete="off">
-    <button id="theme-btn" title="라이트/다크 전환">◐</button>
     <div id="results"></div>
   </div>
 </header>
-<nav id="toc"><div class="toc-t">이 노트</div><a class="l2" href="#%EC%A0%95%EC%9D%98">정의</a><a class="l2" href="#%EC%A7%81%EA%B4%80">직관</a><a class="l2" href="#%EC%84%B1%EC%A7%88-%EC%A0%95%EB%A6%AC">성질 / 정리</a><a class="l2" href="#%EC%98%88%EC%8B%9C">예시</a><a class="l2" href="#%EA%B4%80%EB%A0%A8-%EB%85%B8%ED%8A%B8">관련 노트</a><a class="l2" href="#ai-in-math">AI in Math</a></nav>
+<nav id="toc"><div class="toc-t">목차</div><a class="l2" href="#%EC%A0%95%EC%9D%98">정의</a><a class="l2" href="#%EC%A7%81%EA%B4%80">직관</a><a class="l2" href="#%EC%84%B1%EC%A7%88-%EC%A0%95%EB%A6%AC">성질 / 정리</a><a class="l2" href="#%EC%98%88%EC%8B%9C">예시</a><a class="l2" href="#%EA%B4%80%EB%A0%A8-%EB%85%B8%ED%8A%B8">관련 노트</a><a class="l2" href="#ai-in-math">AI in Math</a></nav>
 <main>
-<div class="crumb"><a href="index.html">선형대수 II · 행렬해석</a><span class="sep">›</span><a href="24.%20%ED%96%89%EB%A0%AC%20%ED%95%AD%EB%93%B1%EC%8B%9D%EA%B3%BC%20%EB%B8%94%EB%A1%9D%ED%96%89%EB%A0%AC.html">24. 행렬 항등식과 블록행렬</a></div><article><h1>Schur complement<span class="badge">작성 예정</span></h1><h2 id="정의">정의</h2>
+<div class="crumb"><a href="../topics/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98.html">선형대수</a><span class="sep">/</span><a href="24.%20%ED%96%89%EB%A0%AC%20%ED%95%AD%EB%93%B1%EC%8B%9D%EA%B3%BC%20%EB%B8%94%EB%A1%9D%ED%96%89%EB%A0%AC.html">행렬 항등식과 블록행렬</a></div><article><h1>Schur complement<span class="badge">작성 예정</span></h1><h2 id="정의">정의</h2>
 <h2 id="직관">직관</h2>
 <h2 id="성질-정리">성질 / 정리</h2>
 <h2 id="예시">예시</h2>
 <h2 id="관련-노트">관련 노트</h2>
-<h2 id="ai-in-math">AI in Math</h2></article><nav class="pn"><a class="prev" href="%EB%B8%94%EB%A1%9D%ED%96%89%EB%A0%AC%20%EC%97%B0%EC%82%B0.html"><span class="dir">← 이전</span><span class="t">블록행렬 연산</span></a><a class="next" href="%EB%B8%94%EB%A1%9D%20%EC%97%AD%ED%96%89%EB%A0%AC%20%EA%B3%B5%EC%8B%9D.html"><span class="dir">다음 →</span><span class="t">블록 역행렬 공식</span></a></nav>
+<h2 id="ai-in-math">AI in Math</h2></article><div class="garden"><nav class="pn"><a class="prev" href="%EB%B8%94%EB%A1%9D%ED%96%89%EB%A0%AC%20%EC%97%B0%EC%82%B0.html"><span class="dir">이전 글</span><span class="t">블록행렬 연산</span></a><a class="next" href="%EB%B8%94%EB%A1%9D%20%EC%97%AD%ED%96%89%EB%A0%AC%20%EA%B3%B5%EC%8B%9D.html"><span class="dir">다음 글</span><span class="t">블록 역행렬 공식</span></a></nav></div>
 </main>
-<footer>
-  <span>mathbrain — 수학 세컨드 브레인</span>
-  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
-</footer>
+<footer>© 2026 이은표</footer>
 <script>window.__ROOT="../";</script>
 <script src="../search-index.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
