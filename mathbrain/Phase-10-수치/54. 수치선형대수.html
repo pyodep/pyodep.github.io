@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>54. 수치선형대수 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="54. 수치선형대수 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">수치</a></div><h1>54. 수치선형대수</h1><div class="post-meta"><span>원자 노트 19개 · 작성 0개</span></div><blockquote><p>Phase 10 · 수치 · 선행: <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/23.%20%ED%8A%B9%EC%9D%B4%EA%B0%92%20%EB%B6%84%ED%95%B4%EC%99%80%20%EC%A0%80%EA%B3%84%EC%88%98%20%EA%B5%AC%EC%A1%B0.html">특이값 분해와 저계수 구조</a>, <a class="wl" href="53.%20%EC%88%98%EC%B9%98%ED%95%B4%EC%84%9D.html">수치해석</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%ED%94%BC%EB%B2%97%ED%8C%85.html">피벗팅</a></li>
+<li><a class="wl wl-stub" href="LU%20%EB%B6%84%ED%95%B4%EC%9D%98%20%EC%95%88%EC%A0%95%EC%84%B1.html">LU 분해의 안정성</a></li>
+<li><a class="wl wl-stub" href="Householder%20%EB%B3%80%ED%99%98.html">Householder 변환</a></li>
+<li><a class="wl wl-stub" href="Givens%20%ED%9A%8C%EC%A0%84.html">Givens 회전</a></li>
+<li><a class="wl wl-stub" href="QR%20%EB%B6%84%ED%95%B4%EC%9D%98%20%EC%88%98%EC%B9%98%EC%A0%81%20%EA%B5%AC%ED%98%84.html">QR 분해의 수치적 구현</a></li>
+<li><a class="wl wl-stub" href="Cholesky%20%EB%B6%84%ED%95%B4%EC%9D%98%20%EC%88%98%EC%B9%98%EC%A0%81%20%EA%B5%AC%ED%98%84.html">Cholesky 분해의 수치적 구현</a></li>
+<li><a class="wl wl-stub" href="%EB%B0%98%EB%B3%B5%EB%B2%95%20%28Jacobi%2C%20Gauss-Seidel%2C%20SOR%29.html">반복법 (Jacobi, Gauss-Seidel, SOR)</a></li>
+<li><a class="wl wl-stub" href="Conjugate%20Gradient.html">Conjugate Gradient</a></li>
+<li><a class="wl wl-stub" href="GMRES.html">GMRES</a></li>
+<li><a class="wl wl-stub" href="Krylov%20%EB%B6%80%EB%B6%84%EA%B3%B5%EA%B0%84.html">Krylov 부분공간</a></li>
+<li><a class="wl wl-stub" href="Lanczos%20%EB%B0%A9%EB%B2%95.html">Lanczos 방법</a></li>
+<li><a class="wl wl-stub" href="Arnoldi%20%EB%B0%A9%EB%B2%95.html">Arnoldi 방법</a></li>
+<li><a class="wl wl-stub" href="%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1%EB%B2%95%20%28power%20iteration%29.html">거듭제곱법 (power iteration)</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%A0%EC%9C%A0%EA%B0%92%20%EC%88%98%EC%B9%98%EA%B3%84%EC%82%B0%20%28QR%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%29.html">고유값 수치계산 (QR 알고리즘)</a></li>
+<li><a class="wl wl-stub" href="%ED%8A%B9%EC%9D%B4%EA%B0%92%20%EC%88%98%EC%B9%98%EA%B3%84%EC%82%B0.html">특이값 수치계산</a></li>
+<li><a class="wl wl-stub" href="Randomized%20linear%20algebra.html">Randomized linear algebra</a></li>
+<li><a class="wl wl-stub" href="Sparse%20matrix.html">Sparse matrix</a></li>
+<li><a class="wl wl-stub" href="Preconditioning.html">Preconditioning</a></li>
+<li><a class="wl wl-stub" href="Condition%20number%20estimation.html">Condition number estimation</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08. 수열과 급수 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="08. 수열과 급수 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">단변수 미적분</a></div><h1>08. 수열과 급수</h1><div class="post-meta"><span>원자 노트 32개 · 작성 0개</span></div><blockquote><p>Phase 1 · 단변수 미적분 · 선행: <a class="wl" href="04.%20%ED%95%A8%EC%88%98%EC%99%80%20%EA%B7%B9%ED%95%9C.html">함수와 극한</a>, <a class="wl" href="07.%20%EC%A0%81%EB%B6%84.html">적분</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%8B%A8%EC%A1%B0%EC%88%98%EC%97%B4.html">단조수열</a></li>
+<li><a class="wl wl-stub" href="%EC%9C%A0%EA%B3%84%EC%88%98%EC%97%B4.html">유계수열</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%A8%EC%A1%B0%EC%88%98%EB%A0%B4%EC%A0%95%EB%A6%AC%20%28%EC%88%98%EC%97%B4%29.html">단조수렴정리 (수열)</a></li>
+<li><a class="wl wl-stub" href="%EC%BD%94%EC%8B%9C%20%EC%88%98%EC%97%B4.html">코시 수열</a></li>
+<li><a class="wl wl-stub" href="%EA%B8%89%EC%88%98%EC%99%80%20%EB%B6%80%EB%B6%84%ED%95%A9.html">급수와 부분합</a></li>
+<li><a class="wl wl-stub" href="%EB%93%B1%EB%B9%84%EA%B8%89%EC%88%98.html">등비급수</a></li>
+<li><a class="wl wl-stub" href="%EC%A1%B0%ED%99%94%EA%B8%89%EC%88%98.html">조화급수</a></li>
+<li><a class="wl wl-stub" href="p-%EA%B8%89%EC%88%98.html">p-급수</a></li>
+<li><a class="wl wl-stub" href="%EB%B0%9C%EC%82%B0%ED%8C%90%EC%A0%95%EB%B2%95.html">발산판정법</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%EA%B5%90%ED%8C%90%EC%A0%95%EB%B2%95.html">비교판정법</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%B9%ED%95%9C%EB%B9%84%EA%B5%90%ED%8C%90%EC%A0%95%EB%B2%95.html">극한비교판정법</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%81%EB%B6%84%ED%8C%90%EC%A0%95%EB%B2%95.html">적분판정법</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%ED%8C%90%EC%A0%95%EB%B2%95.html">비판정법</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%BC%ED%8C%90%EC%A0%95%EB%B2%95.html">근판정법</a></li>
+<li><a class="wl wl-stub" href="%EA%B5%90%EB%8C%80%EA%B8%89%EC%88%98%ED%8C%90%EC%A0%95%EB%B2%95.html">교대급수판정법</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%88%EB%8C%80%EC%88%98%EB%A0%B4.html">절대수렴</a></li>
+<li><a class="wl wl-stub" href="%EC%A1%B0%EA%B1%B4%EC%88%98%EB%A0%B4.html">조건수렴</a></li>
+<li><a class="wl wl-stub" href="%EB%A6%AC%EB%A7%8C%20%EC%9E%AC%EB%B0%B0%EC%97%B4%20%EC%A0%95%EB%A6%AC.html">리만 재배열 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%A9%B1%EA%B8%89%EC%88%98.html">멱급수</a></li>
+<li><a class="wl wl-stub" href="%EC%88%98%EB%A0%B4%EB%B0%98%EA%B2%BD%EA%B3%BC%20%EC%88%98%EB%A0%B4%EA%B5%AC%EA%B0%84.html">수렴반경과 수렴구간</a></li>
+<li><a class="wl wl-stub" href="%EC%95%84%EB%B2%A8%20%EC%A0%95%EB%A6%AC.html">아벨 정리</a></li>
+<li><a class="wl wl-stub" href="%ED%95%A8%EC%88%98%EC%97%B4.html">함수열</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%90%EB%B3%84%EC%88%98%EB%A0%B4.html">점별수렴</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%A0%EB%93%B1%EC%88%98%EB%A0%B4.html">균등수렴</a></li>
+<li><a class="wl wl-stub" href="%EB%B0%94%EC%9D%B4%EC%96%B4%EC%8A%88%ED%8A%B8%EB%9D%BC%EC%8A%A4%20M-%ED%8C%90%EC%A0%95%EB%B2%95.html">바이어슈트라스 M-판정법</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%A0%EB%93%B1%EC%88%98%EB%A0%B4%EA%B3%BC%20%EA%B7%B9%ED%95%9C%20%EC%97%B0%EC%82%B0%EC%9D%98%20%EA%B5%90%ED%99%98%20%28%EB%AF%B8%EB%B6%84%C2%B7%EC%A0%81%EB%B6%84%29.html">균등수렴과 극한 연산의 교환 (미분·적분)</a></li>
+<li><a class="wl wl-stub" href="%ED%85%8C%EC%9D%BC%EB%9F%AC%20%EA%B8%89%EC%88%98.html">테일러 급수</a></li>
+<li><a class="wl wl-stub" href="%EB%A7%A4%ED%81%B4%EB%A1%9C%EB%A6%B0%20%EA%B8%89%EC%88%98.html">매클로린 급수</a></li>
+<li><a class="wl wl-stub" href="%ED%85%8C%EC%9D%BC%EB%9F%AC%20%EC%A0%95%EB%A6%AC.html">테일러 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%9D%BC%EA%B7%B8%EB%9E%91%EC%A3%BC%20%EB%82%98%EB%A8%B8%EC%A7%80%ED%95%AD.html">라그랑주 나머지항</a></li>
+<li><a class="wl wl-stub" href="%EC%98%A4%EC%B0%A8%ED%95%AD%20%ED%91%9C%EA%B8%B0%EB%B2%95%20%28Big-O%2C%20little-o%29.html">오차항 표기법 (Big-O, little-o)</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%90%EA%B7%BC%ED%91%9C%EA%B8%B0%EB%B2%95.html">점근표기법</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

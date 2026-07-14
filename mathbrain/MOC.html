@@ -1,0 +1,1713 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>수학 (전체 커리큘럼 MOC) · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="수학 (전체 커리큘럼 MOC) · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="index.html">mathbrain</a>
+  <nav><a href="map.html">지도</a><a href="MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<h1>수학 (전체 커리큘럼 MOC)</h1><blockquote><p>AI/ML 연구를 위한 수학 위키의 최상위 목차.</p>
+<p>각 항목은 개별 원자 노트(<code>[[키워드]]</code>)가 되며, 이 문서는 학습 순서와 선행관계를 정의한다.</p></blockquote>
+<h2 id="사용법">사용법</h2>
+<ul>
+<li><strong>구조</strong>: Phase(학습 단계) → 과목(챕터) → 원자 노트 후보</li>
+<li><strong>선행</strong>: 각 과목 제목 옆 <code>(선행: n, m)</code> — 해당 번호 과목을 먼저 (부분적으로라도) 아는 것을 전제</li>
+<li><strong>➕ 표시</strong>: 지난 개정에서 새로 추가된 항목 / 【신설】: 새로 분리·추가된 과목</li>
+<li><strong>✱ 표시</strong>: 이번 선행구조 개정(2026-07-04)에서 변경·이동·추가된 항목</li>
+<li><strong>중복 키워드 규칙</strong>: 여러 과목에 등장하는 개념은 노트를 하나만 만들고(canonical), 다른 과목 MOC에서는 같은 노트를 링크한다. canonical 위치는 문서 하단 "중복 키워드 canonical 표" 참조.</li>
+</ul>
+<h3 id="이번-개정-요약">이번 개정 요약 ✱</h3>
+<ul>
+<li>22 ⇄ 23 내용 맞교환(노름 → SVD 순서로; 핵노름은 SVD 장으로 이동) — Eckart-Young ↔ 핵노름 순환 해소</li>
+<li>14장의 행렬지수·선형 ODE·안정성·거듭제곱법을 24/44/46/54로 이동 — P2가 "선행: P0만"이라는 선언을 참으로 만듦</li>
+<li>21장의 공분산·정밀도·Mahalanobis를 28로 이동(canonical: 28)</li>
+<li>77(수학적 물리)을 Phase 16에서 분리 → Phase 17 신설</li>
+<li>Phase 그래프 누락 엣지 보강 (P8→P10, P5→P11, P4→P12, P4·P6→P14, P6→P13, P7·P9→P15, P8·P14→P17)</li>
+<li>장 선행 주석 보강 (17, 25, 27, 35, 53, 54, 55, 65, 66)</li>
+<li>canonical 방향 역전 4건 수정 (디랙 델타→45, Lyapunov→46, 칼만→36, Kronecker/Hadamard→24) + canonical 방향 규칙 신설</li>
+<li>미등재 중복 키워드 12건 canonical 표에 등재</li>
+<li>우선순위 태그(T1/T2/T3) 시스템 제거 — 순서·선행구조만으로 운영</li>
+</ul>
+<h2 id="phase-의존-그래프">Phase 의존 그래프</h2>
+<pre class="mermaid">graph TD
+    P0[P0 수학기초] --&gt; P1[P1 단변수 미적분]
+    P0 --&gt; P2[P2 선형대수 I]
+    P1 --&gt; P3[P3 다변수 미적분]
+    P2 --&gt; P3
+    P2 --&gt; P4[P4 선형대수 II·행렬해석]
+    P3 --&gt; P4
+    P1 --&gt; P5[P5 확률]
+    P3 --&gt; P5
+    P5 --&gt; P6[P6 통계]
+    P1 --&gt; P7[P7 해석학 심화]
+    P1 --&gt; P8[P8 미분방정식·동역학]
+    P2 --&gt; P8
+    P8 --&gt; P9[P9 푸리에·신호처리]
+    P2 --&gt; P9
+    P1 --&gt; P10[P10 수치]
+    P4 --&gt; P10
+    P8 --&gt; P10
+    P3 --&gt; P11[P11 최적화]
+    P4 --&gt; P11
+    P5 --&gt; P11
+    P0 --&gt; P12[P12 이산·그래프]
+    P5 --&gt; P12
+    P4 --&gt; P12
+    P5 --&gt; P13[P13 정보·기하·수송]
+    P7 --&gt; P13
+    P11 --&gt; P13
+    P6 --&gt; P13
+    P5 --&gt; P14[P14 확률과정·확률해석]
+    P8 --&gt; P14
+    P4 --&gt; P14
+    P6 --&gt; P14
+    P11 --&gt; P15[P15 이론적 ML 수학]
+    P14 --&gt; P15
+    P7 --&gt; P15
+    P9 --&gt; P15
+    P0 --&gt; P16[P16 구조 수학]
+    P8 --&gt; P17[P17 수학적 물리]
+    P14 --&gt; P17
+</pre>
+<p>✱ 추가된 엣지: P8→P10 (53 수치 ODE), P5→P11 (57 확률적 최적화), P4→P12 (60 스펙트럴 그래프), P4→P14 (69 랜덤행렬), P6→P14 (68 ← 33 베이즈), P6→P13 (64 ← 32 Fisher), P7→P15 · P9→P15 (71 ← 42, 50), P8·P14→P17 (77 ← 48, 67). P16은 74–76만 남아 "선행: P0"이 참이 됨.</p>
+<h2 id="추천-학습-트랙-연구-목적별-최단-경로">추천 학습 트랙 (연구 목적별 최단 경로)</h2>
+<ul>
+<li><strong>트랙 A — STFT/학습동역학 연구</strong>: 4→5→6→7→8 → 15 → 17 → 45 → 50 → 51 → 52 (+보조: 46 동역학계, 57 확률적 최적화)</li>
+<li><strong>트랙 B — 스펙트럼 체크포인트/Hessian 스펙트럼</strong>: 14 → 21 → 22 → 23 → 25 → 69 랜덤행렬이론</li>
+<li><strong>트랙 C — 확률·통계 백본</strong>: 26→27→28→29→30 → 31→32→33→34→35→36→37</li>
+<li><strong>트랙 D — 생성모델 수학</strong>: 61 → 66 → 67 → 68 → 62</li>
+<li><strong>트랙 E — GNN 수학</strong>: 58 → 59 → 60 (+14 고유값)</li>
+<li><strong>트랙 F — 정규 커리큘럼(공부 순서 그대로)</strong>: Phase 0 → 1 → 2 → 3 → 4 → 5 → 6 → 이후 병렬</li>
+</ul>
+<hr>
+<h1 id="phase-0.-수학-기초">Phase 0. 수학 기초</h1>
+<h2 id="1.-논리와-증명-선행-없음">1. 논리와 증명 (선행: 없음)</h2>
+<ul>
+<li>명제와 술어</li>
+<li>논리 연산 (부정, 그리고, 또는, 조건문) ➕</li>
+<li>필요조건과 충분조건</li>
+<li>명제논리</li>
+<li>술어논리</li>
+<li>한정기호 (∀, ∃) ➕</li>
+<li>추론 규칙 ➕</li>
+<li>직접증명</li>
+<li>대우증명</li>
+<li>모순증명</li>
+<li>수학적 귀납법</li>
+<li>강귀납법 ➕</li>
+<li>구성적 증명과 비구성적 증명 ➕</li>
+<li>반례</li>
+<li>존재성과 유일성</li>
+<li>공리계</li>
+<li>형식체계</li>
+</ul>
+<h2 id="2.-집합과-함수-선행-1">2. 집합과 함수 (선행: 1)</h2>
+<ul>
+<li>집합</li>
+<li>부분집합</li>
+<li>합집합, 교집합, 차집합</li>
+<li>여집합과 드모르간 법칙 ➕</li>
+<li>곱집합</li>
+<li>멱집합</li>
+<li>관계</li>
+<li>동치관계</li>
+<li>동치류</li>
+<li>순서관계</li>
+<li>함수의 정의 (집합론적)</li>
+<li>정의역, 공역, 치역</li>
+<li>단사, 전사, 전단사</li>
+<li>합성함수</li>
+<li>역함수</li>
+<li>상과 원상 ➕</li>
+<li>가산집합</li>
+<li>비가산집합</li>
+<li>칸토어 대각선 논법</li>
+<li>농도 ➕</li>
+</ul>
+<h2 id="3.-수-체계와-부등식-선행-2">3. 수 체계와 부등식 (선행: 2)</h2>
+<ul>
+<li>자연수 (페아노 공리 개요) ➕</li>
+<li>정수</li>
+<li>유리수</li>
+<li>실수</li>
+<li>실수의 완비성 (개요, canonical: 38)</li>
+<li>상한공리</li>
+<li>상한과 하한 (sup, inf)</li>
+<li>최대와 최소</li>
+<li>복소수 (기초)</li>
+<li>절댓값</li>
+<li>구간 표기 ➕</li>
+<li>삼각부등식 (스칼라) ➕</li>
+<li>산술-기하 평균 부등식 (AM-GM) ➕</li>
+<li>코시-슈바르츠 부등식 (스칼라형) ➕</li>
+</ul>
+<hr>
+<h1 id="phase-1.-단변수-미적분">Phase 1. 단변수 미적분</h1>
+<h2 id="4.-함수와-극한-선행-2-3">4. 함수와 극한 (선행: 2, 3)</h2>
+<ul>
+<li>함수의 그래프</li>
+<li>초등함수 개관</li>
+<li>다항함수</li>
+<li>유리함수</li>
+<li>지수함수</li>
+<li>로그함수</li>
+<li>삼각함수</li>
+<li>역삼각함수</li>
+<li>쌍곡함수</li>
+<li>수열</li>
+<li>수열의 극한 (ε-N 정의) ➕</li>
+<li>함수의 극한</li>
+<li>좌극한과 우극한</li>
+<li>무한대에서의 극한</li>
+<li>무한극한</li>
+<li>극한 법칙</li>
+<li>압축 정리</li>
+<li>ε-δ 정의</li>
+<li>연속성</li>
+<li>불연속의 분류 (제거가능, 도약, 진동) ➕</li>
+<li>중간값 정리</li>
+<li>최대최소 정리 (극값 정리)</li>
+<li>균등연속</li>
+<li>점근선</li>
+</ul>
+<h2 id="5.-미분-선행-4">5. 미분 (선행: 4)</h2>
+<ul>
+<li>미분계수</li>
+<li>도함수</li>
+<li>미분가능성</li>
+<li>미분가능성과 연속성</li>
+<li>접선</li>
+<li>속도와 변화율</li>
+<li>곱의 미분</li>
+<li>몫의 미분</li>
+<li>체인룰</li>
+<li>고계도함수</li>
+<li>음함수 미분</li>
+<li>역함수 미분</li>
+<li>로그 미분법</li>
+<li>지수함수의 미분</li>
+<li>로그함수의 미분</li>
+<li>삼각함수의 미분</li>
+<li>역삼각함수의 미분</li>
+<li>쌍곡함수의 미분</li>
+<li>매개변수 미분</li>
+<li>관련율 문제</li>
+<li>선형근사</li>
+<li>미분과 오차전파 (canonical) ✱</li>
+</ul>
+<h2 id="6.-미분의-응용-선행-5">6. 미분의 응용 (선행: 5)</h2>
+<ul>
+<li>페르마 임계점 정리 ➕</li>
+<li>롤의 정리</li>
+<li>평균값 정리</li>
+<li>코시 평균값 정리</li>
+<li>다르부 정리 ➕</li>
+<li>증가와 감소</li>
+<li>임계점</li>
+<li>극대와 극소</li>
+<li>1계 도함수 판정법</li>
+<li>2계 도함수 판정법</li>
+<li>볼록성과 오목성</li>
+<li>변곡점</li>
+<li>로피탈 정리</li>
+<li>최적화 문제 (1변수)</li>
+<li>뉴턴 방법 (canonical) ✱</li>
+<li>테일러 근사 (1변수)</li>
+<li>민감도 분석</li>
+<li>곡률</li>
+<li>곡선의 길이</li>
+<li>곡선의 매개화</li>
+</ul>
+<h2 id="7.-적분-선행-5">7. 적분 (선행: 5)</h2>
+<ul>
+<li>부정적분과 원시함수</li>
+<li>리만 합</li>
+<li>정적분</li>
+<li>리만 적분과 적분가능성</li>
+<li>미적분학의 기본정리 1</li>
+<li>미적분학의 기본정리 2</li>
+<li>치환적분</li>
+<li>부분적분</li>
+<li>삼각치환</li>
+<li>부분분수</li>
+<li>유리함수 적분</li>
+<li>이상적분</li>
+<li>이상적분의 수렴과 비교판정법</li>
+<li>감마함수 ➕</li>
+<li>베타함수 ➕</li>
+<li>가우시안 적분</li>
+<li>적분의 평균값 정리 ➕</li>
+<li>라이프니츠 적분 규칙 (적분 기호 아래 미분) ➕</li>
+<li>면적</li>
+<li>부피와 회전체 부피</li>
+<li>호의 길이</li>
+<li>곡면적</li>
+<li>수치적분 개요 (canonical: 53)</li>
+</ul>
+<h2 id="8.-수열과-급수-선행-4-7">8. 수열과 급수 (선행: 4, 7)</h2>
+<ul>
+<li>단조수열</li>
+<li>유계수열</li>
+<li>단조수렴정리 (수열) ➕</li>
+<li>코시 수열</li>
+<li>급수와 부분합</li>
+<li>등비급수</li>
+<li>조화급수</li>
+<li>p-급수</li>
+<li>발산판정법</li>
+<li>비교판정법</li>
+<li>극한비교판정법</li>
+<li>적분판정법</li>
+<li>비판정법</li>
+<li>근판정법</li>
+<li>교대급수판정법</li>
+<li>절대수렴</li>
+<li>조건수렴</li>
+<li>리만 재배열 정리 ➕</li>
+<li>멱급수</li>
+<li>수렴반경과 수렴구간</li>
+<li>아벨 정리 ➕</li>
+<li>함수열</li>
+<li>점별수렴</li>
+<li>균등수렴</li>
+<li>바이어슈트라스 M-판정법 ➕</li>
+<li>균등수렴과 극한 연산의 교환 (미분·적분) ➕</li>
+<li>테일러 급수</li>
+<li>매클로린 급수</li>
+<li>테일러 정리</li>
+<li>라그랑주 나머지항</li>
+<li>오차항 표기법 (Big-O, little-o)</li>
+<li>점근표기법</li>
+</ul>
+<hr>
+<h1 id="phase-2.-선형대수-i">Phase 2. 선형대수 I</h1>
+<h2 id="9.-벡터와-행렬-선행-3">9. 벡터와 행렬 (선행: 3)</h2>
+<ul>
+<li>벡터와 벡터 연산</li>
+<li>유클리드 내적 (기초)</li>
+<li>노름 (기초, canonical: 22) ✱</li>
+<li>행렬</li>
+<li>행렬의 덧셈과 스칼라배</li>
+<li>행렬곱</li>
+<li>행 관점과 열 관점</li>
+<li>전치행렬</li>
+<li>대각행렬</li>
+<li>삼각행렬</li>
+<li>대칭행렬과 반대칭행렬</li>
+<li>항등행렬과 영행렬</li>
+<li>역행렬</li>
+<li>가역성</li>
+<li>블록행렬 (기초) ➕</li>
+</ul>
+<h2 id="10.-연립방정식과-소거법-선행-9">10. 연립방정식과 소거법 (선행: 9)</h2>
+<ul>
+<li>선형시스템</li>
+<li>가우스 소거법</li>
+<li>행 사다리꼴 / 기약 행 사다리꼴</li>
+<li>피벗</li>
+<li>자유변수</li>
+<li>기본행연산</li>
+<li>해의 존재와 유일성 ➕</li>
+<li>LU 분해</li>
+<li>PLU 분해</li>
+<li>과결정 시스템</li>
+<li>부족결정 시스템</li>
+</ul>
+<h2 id="11.-벡터공간-선행-9-10">11. 벡터공간 (선행: 9, 10)</h2>
+<ul>
+<li>체 (field)</li>
+<li>벡터공간의 공리</li>
+<li>부분공간</li>
+<li>선형결합</li>
+<li>생성 (span)</li>
+<li>선형독립과 선형종속</li>
+<li>기저</li>
+<li>차원</li>
+<li>좌표</li>
+<li>기저변환</li>
+<li>행공간</li>
+<li>열공간</li>
+<li>영공간</li>
+<li>좌영공간</li>
+<li>네 가지 기본 부분공간</li>
+<li>랭크</li>
+<li>널리티</li>
+<li>Rank-Nullity 정리</li>
+</ul>
+<h2 id="12.-선형변환-선행-11">12. 선형변환 (선행: 11)</h2>
+<ul>
+<li>선형변환의 정의</li>
+<li>핵 (kernel)</li>
+<li>상 (image)</li>
+<li>단사·전사 선형변환</li>
+<li>동형사상</li>
+<li>좌표표현과 표준행렬</li>
+<li>합성변환</li>
+<li>역변환</li>
+<li>닮음변환</li>
+<li>불변부분공간</li>
+<li>사영</li>
+<li>직교사영 (개요, canonical: 15)</li>
+<li>선형범함수</li>
+<li>쌍대공간</li>
+<li>쌍대기저</li>
+<li>몫공간</li>
+</ul>
+<h2 id="13.-행렬식-선행-10-11">13. 행렬식 (선행: 10, 11)</h2>
+<ul>
+<li>행렬식의 정의 (순열)</li>
+<li>2×2, n×n 행렬식</li>
+<li>행렬식의 성질</li>
+<li>여인수 전개 (라플라스 전개)</li>
+<li>행렬식과 가역성</li>
+<li>행렬식과 부피</li>
+<li>행렬식과 방향</li>
+<li>크래머 공식</li>
+<li>adjugate 행렬</li>
+<li>특성다항식 (예고, canonical: 14)</li>
+</ul>
+<h2 id="14.-고유값과-스펙트럼-선행-12-13">14. 고유값과 스펙트럼 (선행: 12, 13)</h2>
+<ul>
+<li>고유값</li>
+<li>고유벡터</li>
+<li>고유공간</li>
+<li>특성다항식</li>
+<li>대수적 중복도와 기하적 중복도</li>
+<li>대각화와 대각화 가능성</li>
+<li>닮음</li>
+<li>Schur 분해 ➕</li>
+<li>정규행렬 ➕</li>
+<li>조르당 표준형</li>
+<li>최소다항식</li>
+<li>케일리-해밀턴 정리</li>
+<li>스펙트럼</li>
+<li>스펙트럴 반지름</li>
+<li>Gershgorin 원판 정리 ➕</li>
+<li>Perron-Frobenius 정리 ➕</li>
+<li>마르코프 행렬</li>
+<li>✱ (이동) 행렬지수 e^{At} → 24 · 선형 ODE 시스템과 고유값 → 44 · 안정성과 고유값 → 46 · 거듭제곱법 → 54 — 멱급수·극한(P1)에 의존하는 항목을 분리해 P2의 "선행: P0" 선언을 유지</li>
+</ul>
+<h2 id="15.-내적공간과-직교성-선행-11">15. 내적공간과 직교성 (선행: 11)</h2>
+<ul>
+<li>내적</li>
+<li>노름과 거리</li>
+<li>내적공간</li>
+<li>코시-슈바르츠 부등식</li>
+<li>삼각부등식</li>
+<li>직교성</li>
+<li>직교여공간</li>
+<li>정규직교기저</li>
+<li>그람-슈미트 과정</li>
+<li>QR 분해</li>
+<li>직교행렬</li>
+<li>유니터리 행렬</li>
+<li>직교투영</li>
+<li>최소제곱법 (canonical) ✱</li>
+<li>정규방정식</li>
+<li>푸리에 계수</li>
+<li>베셀 부등식</li>
+<li>파르세발 항등식</li>
+</ul>
+<hr>
+<h1 id="phase-3.-다변수-미적분">Phase 3. 다변수 미적분</h1>
+<h2 id="16.-다변수-함수와-공간-선행-4-9">16. 다변수 함수와 공간 (선행: 4, 9)</h2>
+<ul>
+<li>유클리드 공간 Rⁿ</li>
+<li>벡터값 함수</li>
+<li>스칼라장</li>
+<li>벡터장</li>
+<li>열린집합과 닫힌집합</li>
+<li>내부점, 경계점, 극한점</li>
+<li>컴팩트성 (개요, canonical: 41) ✱</li>
+<li>연결성 (개요, canonical: 41) ✱</li>
+<li>다변수 함수의 극한</li>
+<li>다변수 함수의 연속성</li>
+<li>등위곡선과 등위면</li>
+<li>매개곡선과 매개곡면</li>
+<li>극좌표</li>
+<li>원통좌표</li>
+<li>구면좌표</li>
+</ul>
+<h2 id="17.-편미분과-전미분-선행-5-8-16">17. 편미분과 전미분 (선행: 5, 8, 16) ✱</h2>
+<ul>
+<li>편미분</li>
+<li>고계 편미분과 혼합 편미분</li>
+<li>클레로 정리</li>
+<li>전미분과 미분가능성</li>
+<li>선형근사 (다변수)</li>
+<li>접평면</li>
+<li>방향도함수</li>
+<li>그래디언트</li>
+<li>그래디언트의 기하학적 의미</li>
+<li>그래디언트와 등위면의 직교성</li>
+<li>다변수 체인룰</li>
+<li>야코비안 행렬 (canonical)</li>
+<li>야코비안 행렬식 (개요, canonical: 19)</li>
+<li>헤시안 행렬</li>
+<li>이차근사</li>
+<li>다변수 테일러 전개 (← 8 테일러 정리) ✱</li>
+<li>음함수 정리</li>
+<li>역함수 정리</li>
+<li>민감도 행렬</li>
+<li>국소 선형화</li>
+</ul>
+<h2 id="18.-다변수-최적화-선행-6-17">18. 다변수 최적화 (선행: 6, 17)</h2>
+<ul>
+<li>임계점 (다변수)</li>
+<li>국소최소·국소최대·전역최소·전역최대</li>
+<li>안장점</li>
+<li>헤시안 판정법</li>
+<li>양의 정부호·음의 정부호·준정부호 (개요, canonical: 21)</li>
+<li>라그랑주 승수법</li>
+<li>등식 제약 최적화</li>
+<li>부등식 제약 최적화</li>
+<li>KKT 조건 (개요, canonical: 55)</li>
+<li>볼록집합·볼록함수 (개요, canonical: 55)</li>
+<li>강볼록성, 매끄러움, 립시츠 연속성 (개요, canonical: 55)</li>
+<li>립시츠 그래디언트</li>
+<li>젠센 부등식 (개요+자족 진술, canonical: 29) ✱</li>
+<li>쌍대성과 라그랑주 쌍대문제 (개요, canonical: 55)</li>
+<li>민감도와 shadow price</li>
+</ul>
+<h2 id="19.-중적분-선행-7-17">19. 중적분 (선행: 7, 17)</h2>
+<ul>
+<li>이중적분</li>
+<li>삼중적분</li>
+<li>반복적분</li>
+<li>푸비니 정리</li>
+<li>변수변환 공식</li>
+<li>야코비안 행렬식 (canonical)</li>
+<li>극좌표 적분</li>
+<li>원통좌표 적분</li>
+<li>구면좌표 적분</li>
+<li>다변량 가우시안 적분 ➕</li>
+</ul>
+<h2 id="20.-벡터-미적분-선행-19">20. 벡터 미적분 (선행: 19)</h2>
+<ul>
+<li>선적분 (스칼라장)</li>
+<li>선적분 (벡터장)</li>
+<li>보존장</li>
+<li>퍼텐셜 함수</li>
+<li>경로독립성</li>
+<li>발산 (divergence)</li>
+<li>회전 (curl)</li>
+<li>라플라시안</li>
+<li>면적분</li>
+<li>플럭스</li>
+<li><strong>그린 정리</strong></li>
+<li><strong>발산 정리 (가우스 정리)</strong></li>
+<li><strong>스토크스 정리</strong></li>
+<li>미분형식 개요 (canonical: 63)</li>
+</ul>
+<hr>
+<h1 id="phase-4.-선형대수-ii-·-행렬해석">Phase 4. 선형대수 II · 행렬해석</h1>
+<blockquote><p>✱ 권장 내부 순서: 21 → 22(노름) → 23(SVD) → 24 → 25. Eckart-Young이 행렬노름을 필요로 하므로 노름을 SVD보다 먼저 둔다.</p></blockquote>
+<h2 id="21.-대칭행렬과-이차형식-선행-14-15">21. 대칭행렬과 이차형식 (선행: 14, 15)</h2>
+<ul>
+<li>대칭행렬과 에르미트 행렬</li>
+<li>직교대각화</li>
+<li>스펙트럼 정리</li>
+<li>이차형식</li>
+<li>양의 정부호 / 양의 준정부호 / 음의 정부호 / 부정부호</li>
+<li>주축정리</li>
+<li>실베스터 판정법</li>
+<li>Cholesky 분해</li>
+<li>레일리 몫</li>
+<li>Courant-Fischer min-max 정리 ➕</li>
+<li>Weyl 부등식 (고유값 섭동) ➕</li>
+<li>최대최소 정리 (고유값)</li>
+<li>행렬 부등식과 Loewner order</li>
+<li>공분산 행렬·정밀도 행렬·Mahalanobis 거리 (개요, canonical: 28) ✱</li>
+</ul>
+<h2 id="22.-노름과-행렬노름-선행-15-21-구-23-svd-장과-내용-맞교환">22. 노름과 행렬노름 (선행: 15, 21) ✱ (구 23 — SVD 장과 내용 맞교환)</h2>
+<ul>
+<li>Lp 노름 (L1, L2, L∞)</li>
+<li>Frobenius 노름</li>
+<li>스펙트럼 노름</li>
+<li>연산자 노름 (유도노름)</li>
+<li>핵노름 (개요, canonical: 23) ✱</li>
+<li>노름의 동치성</li>
+<li>행렬 노름의 부등식</li>
+<li>Lipschitz 상수</li>
+<li>거리함수</li>
+<li>코사인 유사도</li>
+<li>내적 유사도</li>
+<li>정규화 (normalization)</li>
+</ul>
+<h2 id="23.-특이값-분해와-저계수-구조-선행-21-22-구-22-노름-장과-내용-맞교환">23. 특이값 분해와 저계수 구조 (선행: 21, 22) ✱ (구 22 — 노름 장과 내용 맞교환)</h2>
+<ul>
+<li>특이값과 특이벡터</li>
+<li>SVD (얇은 SVD, 완전 SVD)</li>
+<li>극분해 (polar decomposition) ➕</li>
+<li>저계수 근사</li>
+<li>Eckart-Young 정리 (Frobenius·스펙트럼 노름 관점 ← 22) ✱</li>
+<li>핵노름 (canonical — 특이값 합, SVD 이후에만 정의 가능) ✱</li>
+<li>유사역행렬 (Moore-Penrose inverse)</li>
+<li>조건수 (개요, canonical: 53)</li>
+<li>행렬 랭크와 수치적 랭크</li>
+<li>PCA</li>
+<li>잠재공간</li>
+<li>행렬 압축과 저랭크 행렬</li>
+<li>randomized SVD</li>
+</ul>
+<h2 id="24.-행렬-항등식과-블록행렬-신설-선행-13-14-21">24. 행렬 항등식과 블록행렬 【신설】 (선행: 13, 14, 21)</h2>
+<ul>
+<li>trace와 cyclic property ➕</li>
+<li>블록행렬 연산 ➕</li>
+<li>Schur complement ➕</li>
+<li>블록 역행렬 공식 ➕</li>
+<li>Sherman-Morrison 공식 ➕</li>
+<li>Woodbury 항등식 ➕</li>
+<li>Matrix determinant lemma ➕</li>
+<li>vec 연산자 ➕</li>
+<li>Kronecker product (canonical) ✱ (72는 텐서 관점 심화)</li>
+<li>Hadamard product (canonical) ✱ (72는 텐서 관점 심화)</li>
+<li>행렬지수와 행렬로그 (canonical) ✱ (14에서 이동; 멱급수 ← 8)</li>
+<li>행렬함수 개요 ➕</li>
+</ul>
+<h2 id="25.-행렬미분-matrix-calculus-선행-17-21-22-23">25. 행렬미분 (Matrix Calculus) (선행: 17, 21, 22, 23) ✱</h2>
+<ul>
+<li>스칼라-벡터 미분</li>
+<li>벡터-벡터 미분</li>
+<li>스칼라-행렬 미분</li>
+<li>야코비안 convention (numerator/denominator layout)</li>
+<li>그래디언트 (행렬 표기)</li>
+<li>헤시안 (행렬 표기)</li>
+<li>벡터-야코비안 곱 (VJP)</li>
+<li>야코비안-벡터 곱 (JVP)</li>
+<li>이차형식의 미분</li>
+<li>trace trick</li>
+<li>행렬곱의 미분</li>
+<li>역행렬의 미분</li>
+<li>행렬식의 미분</li>
+<li>log determinant 미분</li>
+<li>특이값의 미분 (← 23) ✱</li>
+<li>고유값의 미분</li>
+<li>Danskin 정리 (max 함수의 미분) ➕</li>
+<li>backpropagation as chain rule</li>
+<li>automatic differentiation</li>
+<li>forward-mode autodiff</li>
+<li>reverse-mode autodiff</li>
+</ul>
+<hr>
+<h1 id="phase-5.-확률">Phase 5. 확률</h1>
+<h2 id="26.-확률의-기초-선행-2-7">26. 확률의 기초 (선행: 2, 7)</h2>
+<ul>
+<li>표본공간과 사건</li>
+<li>사건연산</li>
+<li>시그마 대수 (개요+2–3줄 자족 정의, canonical: 39) ✱</li>
+<li>확률측도</li>
+<li>콜모고로프 공리</li>
+<li>조건부확률</li>
+<li>곱셈법칙</li>
+<li>전확률 법칙</li>
+<li>베이즈 정리</li>
+<li>독립</li>
+<li>조건부독립</li>
+<li>교환가능성</li>
+<li>확률변수</li>
+<li>이산 확률변수와 연속 확률변수</li>
+<li>CDF, PMF, PDF</li>
+<li>분위수</li>
+<li>확률변수의 함수와 변수변환</li>
+<li>결합분포</li>
+<li>주변분포</li>
+<li>조건부분포</li>
+</ul>
+<h2 id="27.-주요-확률분포-선행-26-7-·-다변량-정규-계열은-19-21-24">27. 주요 확률분포 (선행: 26, 7 · 다변량 정규 계열은 19, 21, 24) ✱</h2>
+<ul>
+<li>베르누이 분포</li>
+<li>이항분포</li>
+<li>기하분포</li>
+<li>음이항분포</li>
+<li>초기하분포</li>
+<li>포아송 분포</li>
+<li>카테고리컬 분포</li>
+<li>다항분포</li>
+<li>균등분포</li>
+<li>지수분포</li>
+<li>감마분포</li>
+<li>베타분포</li>
+<li>정규분포와 표준정규분포</li>
+<li>로그정규분포</li>
+<li>라플라스 분포</li>
+<li>코시 분포</li>
+<li>카이제곱 분포</li>
+<li>t 분포</li>
+<li>F 분포</li>
+<li>디리클레 분포</li>
+<li>다변량 정규분포 (← 19 가우시안 적분, 21 정부호) ✱</li>
+<li>조건부 가우시안 분포 (← 24 Schur complement·블록 역행렬) ✱</li>
+<li>혼합분포</li>
+<li>위치-척도 족 ➕</li>
+<li>Exponential family (canonical, 정보기하 연계)</li>
+</ul>
+<h2 id="28.-기댓값과-모멘트-선행-27-19">28. 기댓값과 모멘트 (선행: 27, 19)</h2>
+<ul>
+<li>기댓값</li>
+<li>기댓값의 선형성</li>
+<li>분산과 표준편차</li>
+<li>모멘트와 중심모멘트</li>
+<li>공분산</li>
+<li>상관계수</li>
+<li>조건부기댓값</li>
+<li>Tower property (전기댓값 법칙)</li>
+<li>조건부분산과 전분산 법칙</li>
+<li>모멘트생성함수</li>
+<li>특성함수</li>
+<li>Lévy 연속성 정리 ➕</li>
+<li>누율생성함수</li>
+<li>확률벡터</li>
+<li>다변량 기댓값과 공분산</li>
+<li>공분산 행렬 (canonical) ✱ (21에서 이동)</li>
+<li>정밀도 행렬 ✱ (21에서 이동)</li>
+<li>Mahalanobis 거리 ✱ (21에서 이동)</li>
+<li>상관행렬</li>
+</ul>
+<h2 id="29.-확률-부등식과-극한정리-선행-28-8">29. 확률 부등식과 극한정리 (선행: 28, 8)</h2>
+<ul>
+<li>마르코프 부등식</li>
+<li>체비셰프 부등식</li>
+<li>젠센 부등식 (canonical)</li>
+<li>Union bound</li>
+<li>Borel-Cantelli lemma</li>
+<li>Kolmogorov 0-1 법칙 ➕</li>
+<li>대수의 약법칙</li>
+<li>대수의 강법칙</li>
+<li>중심극한정리</li>
+<li>Lindeberg CLT</li>
+<li>Berry-Esseen 정리 ➕</li>
+<li>Delta method</li>
+<li>확률수렴</li>
+<li>거의 확실한 수렴</li>
+<li>분포수렴</li>
+<li>Lp 수렴</li>
+<li>Slutsky 정리</li>
+<li>연속사상정리</li>
+<li>Glivenko-Cantelli 정리</li>
+<li>Donsker 정리 개요</li>
+</ul>
+<h2 id="30.-집중부등식과-고차원-확률-신설-선행-29">30. 집중부등식과 고차원 확률 【신설】 (선행: 29)</h2>
+<ul>
+<li>Sub-Gaussian 확률변수 ➕</li>
+<li>Sub-exponential 확률변수 ➕</li>
+<li>Chernoff bound</li>
+<li>Hoeffding inequality</li>
+<li>Bernstein inequality</li>
+<li>Azuma-Hoeffding inequality (bounded-difference 형태로 자족 서술; 마팅게일 canonical: 66) ✱</li>
+<li>McDiarmid inequality ➕</li>
+<li>Concentration of measure</li>
+<li>고차원 구의 기하 (부피 집중) ➕</li>
+<li>거리 집중 현상 ➕</li>
+<li>Random projection</li>
+<li>Johnson-Lindenstrauss lemma</li>
+<li>ε-net과 covering 논증 개요 ➕</li>
+</ul>
+<hr>
+<h1 id="phase-6.-통계">Phase 6. 통계</h1>
+<h2 id="31.-통계학-기초-선행-28">31. 통계학 기초 (선행: 28)</h2>
+<ul>
+<li>모집단과 표본</li>
+<li>모수와 통계량</li>
+<li>표본분포</li>
+<li>표본평균과 표본분산</li>
+<li>순서통계량</li>
+<li>충분통계량</li>
+<li>최소충분통계량</li>
+<li>완비통계량</li>
+<li>Ancillary statistic</li>
+<li>Likelihood</li>
+<li>Likelihood principle</li>
+<li>식별가능성</li>
+<li>추정량</li>
+<li>표준오차</li>
+<li>Sampling bias</li>
+<li>결측자료 개요 (canonical: 36)</li>
+<li>실험설계와 무작위화</li>
+</ul>
+<h2 id="32.-점추정-선행-31-29">32. 점추정 (선행: 31, 29)</h2>
+<ul>
+<li>불편성과 편향</li>
+<li>일치성</li>
+<li>효율성</li>
+<li>평균제곱오차 (MSE)</li>
+<li>편향-분산 분해</li>
+<li>최대우도추정 (MLE)</li>
+<li>로그우도</li>
+<li>Score function</li>
+<li>Fisher information</li>
+<li>관측 Fisher 정보</li>
+<li>Cramér-Rao lower bound</li>
+<li>적률법</li>
+<li>최소분산불편추정량 (MVUE)</li>
+<li>Rao-Blackwell 정리</li>
+<li>Lehmann-Scheffé 정리</li>
+<li>MLE의 점근정규성</li>
+<li>M-estimator</li>
+<li>Robust estimator</li>
+<li>Shrinkage estimator</li>
+</ul>
+<h2 id="33.-베이즈-통계-선행-31-26">33. 베이즈 통계 (선행: 31, 26)</h2>
+<ul>
+<li>사전분포</li>
+<li>사후분포</li>
+<li>우도와 evidence</li>
+<li>Posterior predictive distribution</li>
+<li>MAP 추정</li>
+<li>베이즈 추정량</li>
+<li>켤레사전분포</li>
+<li>베타-베르누이 모델</li>
+<li>디리클레-카테고리컬 모델</li>
+<li>정규-정규 모델</li>
+<li>계층적 베이즈 모델</li>
+<li>경험적 베이즈</li>
+<li>Credible interval</li>
+<li>베이즈 모델 선택과 Bayes factor</li>
+<li>Variational Bayes (개요, canonical: 61 ELBO 연계)</li>
+<li>Laplace approximation</li>
+<li>MCMC posterior sampling (canonical: 68)</li>
+</ul>
+<h2 id="34.-가설검정과-구간추정-선행-31-29">34. 가설검정과 구간추정 (선행: 31, 29)</h2>
+<ul>
+<li>신뢰구간</li>
+<li>Pivotal quantity</li>
+<li>t interval / Wald interval / likelihood interval / bootstrap interval</li>
+<li>귀무가설과 대립가설</li>
+<li>검정통계량과 기각역</li>
+<li>유의수준</li>
+<li>p-value</li>
+<li>1종 오류와 2종 오류</li>
+<li>검정력</li>
+<li>Neyman-Pearson lemma</li>
+<li>우도비 검정</li>
+<li>Wald test</li>
+<li>Score test</li>
+<li>다중검정 문제</li>
+<li>Bonferroni correction</li>
+<li>FDR (False Discovery Rate)</li>
+<li>Permutation test</li>
+<li>Sequential testing</li>
+</ul>
+<h2 id="35.-회귀와-통계모델-선행-31-32-15">35. 회귀와 통계모델 (선행: 31, 32, 15) ✱</h2>
+<ul>
+<li>단순선형회귀</li>
+<li>다중선형회귀</li>
+<li>최소제곱추정 (통계 관점, canonical: 15) ✱</li>
+<li>가우스-마르코프 정리</li>
+<li>잔차와 잔차분석</li>
+<li>결정계수</li>
+<li>다중공선성</li>
+<li>Ridge regression</li>
+<li>Lasso</li>
+<li>Generalized Linear Model (GLM)</li>
+<li>Link function</li>
+<li>Logistic regression</li>
+<li>Poisson regression</li>
+<li>GLM에서의 MLE (← 32) ✱</li>
+<li>모델 선택: AIC / BIC</li>
+<li>교차검증</li>
+<li>Bootstrap (canonical) ✱</li>
+<li>Causal regression 개요</li>
+</ul>
+<h2 id="36.-잠재변수-모델과-em-신설-선행-32-27">36. 잠재변수 모델과 EM 【신설】 (선행: 32, 27)</h2>
+<ul>
+<li>잠재변수 모델 ➕</li>
+<li>혼합모델과 GMM ➕</li>
+<li>EM 알고리즘 ➕</li>
+<li>E-step과 M-step ➕</li>
+<li>EM의 단조 증가성 (Jensen 논증) ➕</li>
+<li>EM과 ELBO의 관계 ➕</li>
+<li>은닉 마르코프 모델 (HMM) ➕</li>
+<li>전방-후방 알고리즘 ➕</li>
+<li>비터비 알고리즘 ➕</li>
+<li>상태공간 모델 (canonical) ✱</li>
+<li>칼만 필터 (canonical, 추정 관점) ✱ (49는 제어 관점 심화)</li>
+<li>결측 메커니즘 (MCAR / MAR / MNAR) ➕</li>
+</ul>
+<h2 id="37.-그래프-확률모델-신설-선행-26-32-연계-59">37. 그래프 확률모델 【신설】 (선행: 26, 32; 연계: 59)</h2>
+<ul>
+<li>조건부 독립 구조 ➕</li>
+<li>베이지안 네트워크 ➕</li>
+<li>d-분리 ➕</li>
+<li>마르코프 랜덤 필드 (MRF) ➕</li>
+<li>해머슬리-클리퍼드 정리 ➕</li>
+<li>인수 그래프 (factor graph) ➕</li>
+<li>Message passing / Belief propagation ➕</li>
+<li>Sum-product와 max-product ➕</li>
+<li>Junction tree 개요 ➕</li>
+<li>그래프 모델 추론의 계산 복잡도 ➕</li>
+<li>Plate notation ➕</li>
+</ul>
+<hr>
+<h1 id="phase-7.-해석학-심화-병렬-트랙">Phase 7. 해석학 심화 (병렬 트랙)</h1>
+<h2 id="38.-실해석-선행-8">38. 실해석 (선행: 8)</h2>
+<ul>
+<li>실수의 완비성 (canonical)</li>
+<li>상한공리 (심화)</li>
+<li>볼차노-바이어슈트라스 정리</li>
+<li>코시 수열과 완비성</li>
+<li>Heine-Borel 정리</li>
+<li>컴팩트 집합 (Rⁿ 관점, canonical: 41) ✱</li>
+<li>연결집합 (canonical: 41) ✱</li>
+<li>연속함수의 성질 (컴팩트 집합 위)</li>
+<li>균등연속 (심화)</li>
+<li>리만 적분 (엄밀한 구성)</li>
+<li>함수열의 점별수렴과 균등수렴 (심화)</li>
+<li>Banach 고정점 정리 (축약사상 원리) ➕</li>
+<li>Arzelà-Ascoli 정리 개요</li>
+<li>Weierstrass 근사정리 (canonical: 71)</li>
+</ul>
+<h2 id="39.-측도론-선행-38">39. 측도론 (선행: 38)</h2>
+<ul>
+<li>집합족과 대수</li>
+<li>시그마 대수 (canonical)</li>
+<li>Borel 시그마 대수</li>
+<li>측도</li>
+<li>확률측도 (엄밀)</li>
+<li>외측도와 Carathéodory 구성</li>
+<li>가측집합</li>
+<li>가측함수</li>
+<li>거의 어디서나 (a.e.)</li>
+<li>단순함수</li>
+<li>르베그 적분</li>
+<li>단조수렴정리</li>
+<li>Fatou 보조정리</li>
+<li>지배수렴정리</li>
+<li>Lp 공간 (측도 관점, canonical) ✱</li>
+<li>곱측도</li>
+<li>푸비니-톤넬리 정리</li>
+<li>Radon-Nikodym 정리</li>
+<li>측도의 절대연속성</li>
+<li>약수렴과 분포수렴 (측도 관점)</li>
+<li>확률공간의 엄밀한 정의</li>
+</ul>
+<h2 id="40.-복소해석-선행-5-7">40. 복소해석 (선행: 5, 7)</h2>
+<ul>
+<li>복소수와 복소평면</li>
+<li>극형식과 오일러 공식</li>
+<li>복소함수</li>
+<li>복소미분가능성</li>
+<li>코시-리만 방정식</li>
+<li>해석함수와 정칙함수</li>
+<li>조화함수</li>
+<li>복소적분</li>
+<li>코시 적분정리</li>
+<li>코시 적분공식</li>
+<li>최대절댓값 원리</li>
+<li>Liouville 정리</li>
+<li>대수학의 기본정리 ➕</li>
+<li>테일러 급수 (복소)</li>
+<li>로랑 급수</li>
+<li>고립특이점</li>
+<li>유수정리</li>
+<li>등각사상</li>
+<li>해석적 연속</li>
+<li>푸리에·라플라스 변환과의 연결</li>
+</ul>
+<h2 id="41.-위상수학-선행-38">41. 위상수학 (선행: 38)</h2>
+<ul>
+<li>위상공간</li>
+<li>열린집합과 닫힌집합 (일반)</li>
+<li>근방, 내부, 폐포, 경계</li>
+<li>기저와 부분기저</li>
+<li>연속함수 (위상적 정의)</li>
+<li>위상동형</li>
+<li>부분공간 위상</li>
+<li>곱위상과 몫위상</li>
+<li>컴팩트성 (canonical) ✱</li>
+<li>연결성과 경로연결성 (canonical) ✱</li>
+<li>분리공리</li>
+<li>거리공간</li>
+<li>완비거리공간</li>
+<li>Baire category theorem</li>
+<li>기본군 개요</li>
+<li>다양체의 위상적 기초</li>
+</ul>
+<h2 id="42.-함수해석-선행-39-41-15">42. 함수해석 (선행: 39, 41, 15)</h2>
+<ul>
+<li>노름공간</li>
+<li>Banach 공간</li>
+<li>Hilbert 공간</li>
+<li>Lp 공간 (함수해석 관점, canonical: 39) ✱</li>
+<li>내적공간의 완비화</li>
+<li>직교분해와 정사영정리</li>
+<li>선형연산자</li>
+<li>유계 선형연산자</li>
+<li>연산자 노름 (심화)</li>
+<li>쌍대공간 (무한차원)</li>
+<li>약수렴과 약-* 수렴</li>
+<li>Hahn-Banach 정리</li>
+<li>균등유계성 원리</li>
+<li>열린사상 정리</li>
+<li>닫힌그래프 정리</li>
+<li>Riesz 표현정리</li>
+<li>콤팩트 연산자</li>
+<li>스펙트럼 이론 (연산자)</li>
+<li>자기수반 연산자</li>
+<li>적분연산자</li>
+<li>재생커널 Hilbert 공간 개요 (canonical: 65)</li>
+</ul>
+<h2 id="43.-분포와-일반화함수-선행-42-연계-50">43. 분포와 일반화함수 (선행: 42; 연계: 50)</h2>
+<ul>
+<li>Test function</li>
+<li>Distribution (일반화함수)</li>
+<li>Dirac delta (엄밀화 — tempered distribution 관점; 기초 canonical: 45) ✱</li>
+<li>Heaviside function</li>
+<li>약미분 (weak derivative)</li>
+<li>Sobolev 공간</li>
+<li>Tempered distribution</li>
+<li>분포의 푸리에 변환</li>
+<li>Green 함수 (일반)</li>
+<li>Fundamental solution</li>
+<li>PDE의 약형식 (weak formulation)</li>
+<li>변분형식</li>
+<li>유한요소법과의 연결</li>
+</ul>
+<hr>
+<h1 id="phase-8.-미분방정식과-동역학">Phase 8. 미분방정식과 동역학</h1>
+<h2 id="44.-상미분방정식-선행-7-14">44. 상미분방정식 (선행: 7, 14)</h2>
+<ul>
+<li>미분방정식의 분류 (ODE/PDE)</li>
+<li>초기값 문제와 경계값 문제</li>
+<li>변수분리형 ODE</li>
+<li>완전미분방정식</li>
+<li>적분인자</li>
+<li>1계 선형 ODE</li>
+<li>베르누이 방정식</li>
+<li>방향장</li>
+<li>피카르-린델뢰프 정리 (해의 존재와 유일성) ➕</li>
+<li>선형 ODE 시스템과 고유값 ✱ (14에서 이동)</li>
+<li>행렬지수 해 x(t) = e^{At}x₀ (행렬지수 canonical: 24) ✱</li>
+<li>2계 선형 ODE</li>
+<li>특성방정식</li>
+<li>동차방정식과 비동차방정식</li>
+<li>미정계수법</li>
+<li>매개변수 변화법</li>
+<li>오일러-코시 방정식</li>
+<li>감쇠진동, 강제진동, 공진</li>
+<li>Green 함수 (ODE)</li>
+<li>Sturm-Liouville 문제</li>
+</ul>
+<h2 id="45.-라플라스-변환-선행-44-7">45. 라플라스 변환 (선행: 44, 7)</h2>
+<ul>
+<li>라플라스 변환과 역변환</li>
+<li>선형성과 이동정리</li>
+<li>미분정리와 적분정리</li>
+<li>단위계단함수</li>
+<li>디랙 델타 함수 (canonical — 실용 정의; 엄밀화는 43) ✱</li>
+<li>임펄스 응답 (자족 미니 정의, canonical: 51) ✱</li>
+<li>전달함수</li>
+<li>합성곱 정리 (라플라스)</li>
+<li>초기값 정리와 최종값 정리</li>
+<li>ODE 풀이 응용</li>
+<li>시스템 응답과 안정성 해석</li>
+<li>제어이론과의 연결</li>
+</ul>
+<h2 id="46.-동역학계-선행-44-17">46. 동역학계 (선행: 44, 17)</h2>
+<ul>
+<li>선형 시스템 x' = Ax (행렬지수 연계: 24)</li>
+<li>안정성과 고유값 ✱ (14에서 이동)</li>
+<li>비선형 시스템</li>
+<li>상평면과 위상초상</li>
+<li>평형점</li>
+<li>안정성</li>
+<li>Lyapunov 안정성</li>
+<li>점근안정성과 불안정성</li>
+<li>Lyapunov 함수 (canonical) ✱ (49는 제어 관점 심화)</li>
+<li>선형화와 야코비안 안정성 판정</li>
+<li>임계점 분류 (노드, 안장점, 중심, 나선)</li>
+<li>Limit cycle</li>
+<li>분기 (bifurcation)</li>
+<li>로지스틱 맵</li>
+<li>Chaos 개요</li>
+<li>민감한 초기조건</li>
+<li>Lyapunov exponent</li>
+<li>Gradient flow ➕</li>
+<li>학습 동역학을 동역학계로 보기 (training dynamics as dynamical system) ➕</li>
+</ul>
+<h2 id="47.-편미분방정식-선행-44-20">47. 편미분방정식 (선행: 44, 20)</h2>
+<ul>
+<li>PDE의 분류 (타원형, 포물형, 쌍곡형)</li>
+<li>선형 PDE와 비선형 PDE</li>
+<li>열방정식</li>
+<li>파동방정식</li>
+<li>라플라스 방정식</li>
+<li>포아송 방정식</li>
+<li>변수분리법</li>
+<li>푸리에 방법</li>
+<li>경계조건 (디리클레, 노이만, 로빈)</li>
+<li>약해 (weak solution)</li>
+<li>변분형식 (canonical: 43)</li>
+<li>유한차분법 (canonical: 53)</li>
+<li>유한요소법</li>
+<li>PINN과의 연결</li>
+</ul>
+<h2 id="48.-변분법-선행-17-44">48. 변분법 (선행: 17, 44)</h2>
+<ul>
+<li>Functional (범함수)</li>
+<li>First variation</li>
+<li>Euler-Lagrange 방정식</li>
+<li>제약 변분문제</li>
+<li>Lagrangian과 Hamiltonian (canonical: 77)</li>
+<li>Action principle</li>
+<li>측지선의 변분적 특성화</li>
+<li>Optimal control 개요 (canonical: 49)</li>
+<li>Pontryagin maximum principle</li>
+<li>Gradient flow (변분 관점, canonical: 46)</li>
+<li>Energy functional</li>
+<li>Regularization functional</li>
+<li>Variational inference와의 연결</li>
+</ul>
+<h2 id="49.-제어이론-선행-44-45-14">49. 제어이론 (선행: 44, 45, 14)</h2>
+<ul>
+<li>상태공간 모델 (canonical: 36; 제어 관점) ✱</li>
+<li>선형시스템 (제어 관점)</li>
+<li>Controllability</li>
+<li>Observability</li>
+<li>Transfer function (심화)</li>
+<li>Feedback</li>
+<li>안정성 (제어 관점)</li>
+<li>라우스-후르비츠 판별법 ➕</li>
+<li>나이퀴스트 안정성 판별법 ➕</li>
+<li>Lyapunov function (canonical: 46; 제어 관점 심화) ✱</li>
+<li>LQR</li>
+<li>Riccati equation</li>
+<li>Kalman filter (canonical: 36; 제어 관점) ✱</li>
+<li>Optimal control</li>
+<li>Model predictive control</li>
+<li>System identification</li>
+<li>강화학습과의 연결</li>
+</ul>
+<hr>
+<h1 id="phase-9.-푸리에-해석과-신호처리">Phase 9. 푸리에 해석과 신호처리</h1>
+<h2 id="50.-푸리에-해석-선행-8-15-45">50. 푸리에 해석 (선행: 8, 15, 45)</h2>
+<ul>
+<li>주기함수와 삼각급수</li>
+<li>푸리에 급수</li>
+<li>푸리에 계수 (직교투영 관점)</li>
+<li>복소 푸리에 급수</li>
+<li>디리클레 조건</li>
+<li>깁스 현상</li>
+<li>푸리에 변환과 역변환</li>
+<li>푸리에 변환의 성질 (이동, 스케일링, 미분)</li>
+<li>합성곱 정리 (푸리에)</li>
+<li>파르세발 정리</li>
+<li>플랑셰렐 정리</li>
+<li>포아송 합 공식 ➕</li>
+<li>섀넌 샘플링 정리 ➕</li>
+<li>불확정성 원리</li>
+<li>분포로서의 푸리에 변환 (canonical: 43)</li>
+<li>주파수 영역</li>
+<li>스펙트럼 해석</li>
+</ul>
+<h2 id="51.-신호처리-선행-50">51. 신호처리 (선행: 50)</h2>
+<ul>
+<li>신호 (연속시간, 이산시간)</li>
+<li>시스템과 선형시불변(LTI) 시스템</li>
+<li>임펄스 응답 (canonical)</li>
+<li>합성곱 (신호 관점)</li>
+<li>샘플링</li>
+<li>나이퀴스트 정리 (canonical: 50 샘플링 정리)</li>
+<li>에일리어싱</li>
+<li>Z-변환 ➕</li>
+<li>DFT</li>
+<li>FFT</li>
+<li>자기상관 함수 ➕</li>
+<li>정상성 (약정상, 강정상) ➕</li>
+<li><strong>Wiener-Khinchin 정리 (PSD = 자기상관의 푸리에 변환)</strong> ➕</li>
+<li>파워 스펙트럼 밀도 (PSD)</li>
+<li>주기도 (periodogram) ➕</li>
+<li>Welch 방법 (스펙트럼 추정) ➕</li>
+<li>스펙트럼 누설 ➕</li>
+<li>필터 (저역, 고역, 대역통과)</li>
+<li>잡음과 SNR</li>
+</ul>
+<h2 id="52.-시간-주파수-해석-신설-분리-선행-51">52. 시간-주파수 해석 【신설 분리】 (선행: 51)</h2>
+<ul>
+<li>윈도우 함수 (직사각, Hann, Hamming, 가우시안) ➕</li>
+<li>윈도우와 스펙트럼 누설의 관계 ➕</li>
+<li>STFT 정의</li>
+<li>역 STFT와 COLA 조건 ➕</li>
+<li>스펙트로그램</li>
+<li>시간-주파수 해상도 트레이드오프</li>
+<li>가보르 한계 (불확정성 원리의 시간-주파수 형태) ➕</li>
+<li>Gabor 변환 ➕</li>
+<li>웨이블릿 변환 (CWT, DWT)</li>
+<li>Haar 웨이블릿, Morlet 웨이블릿 ➕</li>
+<li>멀티해상도 분석 ➕</li>
+<li>멜 스펙트로그램</li>
+<li>Cepstrum</li>
+<li>비정상 신호 해석 전략 ➕</li>
+<li>STFT vs 웨이블릿 비교 ➕</li>
+</ul>
+<hr>
+<h1 id="phase-10.-수치">Phase 10. 수치</h1>
+<h2 id="53.-수치해석-선행-8-10-44">53. 수치해석 (선행: 8, 10, 44) ✱</h2>
+<ul>
+<li>부동소수점</li>
+<li>반올림오차와 절단오차</li>
+<li>오차전파 (canonical: 5; 수치 관점) ✱</li>
+<li>절대오차와 상대오차</li>
+<li>조건수 (canonical)</li>
+<li>수치 안정성</li>
+<li>Well-conditioned / ill-conditioned 문제</li>
+<li>보간법</li>
+<li>라그랑주 보간과 뉴턴 보간</li>
+<li>스플라인</li>
+<li>수치미분</li>
+<li>수치적분 (canonical)</li>
+<li>사다리꼴 공식과 심프슨 공식</li>
+<li>Gaussian quadrature</li>
+<li>비선형 방정식 풀이</li>
+<li>이분법</li>
+<li>고정점 반복 (Banach 고정점 연계)</li>
+<li>뉴턴-랩슨 방법 (canonical: 6; 수치 관점) ✱</li>
+<li>할선법</li>
+<li>수치 ODE (오일러, Runge-Kutta) (← 44) ✱</li>
+<li>Stiff equation</li>
+<li>유한차분법 (canonical)</li>
+</ul>
+<h2 id="54.-수치선형대수-선행-23-53">54. 수치선형대수 (선행: 23, 53) ✱</h2>
+<ul>
+<li>피벗팅</li>
+<li>LU 분해의 안정성</li>
+<li>Householder 변환</li>
+<li>Givens 회전</li>
+<li>QR 분해의 수치적 구현</li>
+<li>Cholesky 분해의 수치적 구현</li>
+<li>반복법 (Jacobi, Gauss-Seidel, SOR)</li>
+<li>Conjugate Gradient</li>
+<li>GMRES</li>
+<li>Krylov 부분공간 ➕</li>
+<li>Lanczos 방법</li>
+<li>Arnoldi 방법</li>
+<li>거듭제곱법 (power iteration) ✱ (14에서 이동)</li>
+<li>고유값 수치계산 (QR 알고리즘) ➕</li>
+<li>특이값 수치계산</li>
+<li>Randomized linear algebra</li>
+<li>Sparse matrix</li>
+<li>Preconditioning</li>
+<li>Condition number estimation</li>
+</ul>
+<hr>
+<h1 id="phase-11.-최적화">Phase 11. 최적화</h1>
+<h2 id="55.-볼록해석-선행-18-22">55. 볼록해석 (선행: 18, 22) ✱</h2>
+<ul>
+<li>볼록집합 (canonical)</li>
+<li>Affine set</li>
+<li>Convex hull</li>
+<li>Cone과 convex cone</li>
+<li>Simplex와 polytope</li>
+<li>분리초평면 정리</li>
+<li>받침초평면 정리</li>
+<li>볼록함수 (canonical)</li>
+<li>Strict convexity와 strong convexity</li>
+<li>Smoothness</li>
+<li>Subgradient와 subdifferential</li>
+<li>Fenchel conjugate</li>
+<li>Fenchel duality</li>
+<li>Epigraph</li>
+<li>Proximal operator</li>
+<li>Moreau envelope</li>
+<li>Bregman divergence</li>
+<li>KKT 조건 (canonical)</li>
+<li>Slater condition</li>
+<li>Strong duality</li>
+<li>Convex relaxation</li>
+<li>Semidefinite programming</li>
+</ul>
+<h2 id="56.-최적화-알고리즘-선행-25-55">56. 최적화 알고리즘 (선행: 25, 55)</h2>
+<ul>
+<li>최적화 문제의 구성 (목적함수, 제약, feasible set)</li>
+<li>국소해와 전역해</li>
+<li>Gradient descent</li>
+<li>수렴률 (볼록/강볼록 케이스) ➕</li>
+<li>Line search</li>
+<li>Trust region</li>
+<li>Newton method (다변수) (1변수 canonical: 6) ✱</li>
+<li>Quasi-Newton method</li>
+<li>BFGS와 L-BFGS</li>
+<li>Coordinate descent</li>
+<li>Projected gradient</li>
+<li>Proximal gradient</li>
+<li>Mirror descent</li>
+<li>Subgradient method</li>
+<li>Duality 기반 방법 (primal-dual)</li>
+<li>ADMM</li>
+<li>Saddle point 문제</li>
+</ul>
+<h2 id="57.-확률적-최적화-신설-분리-선행-56-29">57. 확률적 최적화 【신설 분리】 (선행: 56, 29)</h2>
+<ul>
+<li>Stochastic gradient descent (SGD)</li>
+<li>Mini-batch SGD</li>
+<li>Momentum</li>
+<li>Nesterov momentum</li>
+<li>AdaGrad ➕</li>
+<li>RMSProp ➕</li>
+<li>Adam의 수학 ➕</li>
+<li>학습률 스케줄 ➕</li>
+<li>확률근사 (stochastic approximation)</li>
+<li>Robbins-Monro 알고리즘</li>
+<li>분산감소 기법 (SVRG 개요) ➕</li>
+<li>SGD의 SDE 근사 관점 ➕ (연계: 67)</li>
+<li>Saddle point 탈출</li>
+<li>Sharpness</li>
+<li>Flat minima</li>
+</ul>
+<hr>
+<h1 id="phase-12.-이산수학과-그래프">Phase 12. 이산수학과 그래프</h1>
+<h2 id="58.-조합론-선행-1-26">58. 조합론 (선행: 1, 26)</h2>
+<ul>
+<li>순열과 조합</li>
+<li>이항정리와 다항정리</li>
+<li>포함-배제 원리</li>
+<li>비둘기집 원리</li>
+<li>생성함수</li>
+<li>점화식</li>
+<li>Catalan number</li>
+<li>Stirling number</li>
+<li>Bell number</li>
+<li>Partition</li>
+<li>조합적 확률</li>
+<li>랜덤 그래프</li>
+<li>Erdős–Rényi graph</li>
+<li>Concentration inequality와의 연결 (canonical: 30)</li>
+<li>Probabilistic method</li>
+</ul>
+<h2 id="59.-그래프-이론-선행-2">59. 그래프 이론 (선행: 2)</h2>
+<ul>
+<li>그래프, 노드, 엣지, 차수</li>
+<li>방향그래프와 무방향그래프</li>
+<li>가중그래프</li>
+<li>경로와 사이클</li>
+<li>연결성과 연결성분</li>
+<li>트리와 spanning tree</li>
+<li>Bipartite graph</li>
+<li>Complete graph</li>
+<li>Planar graph</li>
+<li>그래프 색칠</li>
+<li>Matching</li>
+<li>Flow network</li>
+<li>Max-flow min-cut 정리</li>
+<li>Shortest path</li>
+<li>Dijkstra / Bellman-Ford / Floyd-Warshall</li>
+<li>그래프 탐색 (BFS, DFS)</li>
+</ul>
+<h2 id="60.-스펙트럴-그래프-이론-선행-59-21">60. 스펙트럴 그래프 이론 (선행: 59, 21)</h2>
+<ul>
+<li>인접행렬</li>
+<li>차수행렬</li>
+<li>그래프 라플라시안</li>
+<li>Normalized Laplacian</li>
+<li>Laplacian eigenvalues</li>
+<li>Fiedler value와 algebraic connectivity</li>
+<li>Spectral clustering</li>
+<li>Random walk on graph</li>
+<li>전이행렬과 정상분포 (그래프 관점; 자족 정의, canonical: 66) ✱</li>
+<li>Graph Fourier transform</li>
+<li>Graph signal processing</li>
+<li>Cheeger inequality</li>
+<li>Expander graph</li>
+<li>Graph cut과 normalized cut</li>
+<li>Message passing의 수학적 기초</li>
+<li>Oversmoothing과 spectrum</li>
+<li>Graph diffusion</li>
+</ul>
+<hr>
+<h1 id="phase-13.-정보-기하-수송">Phase 13. 정보, 기하, 수송</h1>
+<h2 id="61.-정보이론-선행-27-29">61. 정보이론 (선행: 27, 29)</h2>
+<ul>
+<li>자기정보량</li>
+<li>섀넌 엔트로피</li>
+<li>결합 엔트로피와 조건부 엔트로피</li>
+<li>Chain rule for entropy</li>
+<li>Cross entropy</li>
+<li>KL divergence</li>
+<li>Gibbs inequality</li>
+<li>상호정보량과 조건부 상호정보량</li>
+<li>데이터 처리 부등식</li>
+<li>Jensen-Shannon divergence</li>
+<li>f-divergence</li>
+<li>Rényi entropy</li>
+<li>Differential entropy</li>
+<li>최대 엔트로피 원리</li>
+<li>Source coding theorem</li>
+<li>Channel capacity</li>
+<li>Rate-distortion theory</li>
+<li>MDL</li>
+<li>Perplexity</li>
+<li>Information bottleneck</li>
+<li>Variational information bottleneck</li>
+<li>ELBO</li>
+<li>Bits-back coding</li>
+</ul>
+<h2 id="62.-최적수송-선행-55-61">62. 최적수송 (선행: 55, 61)</h2>
+<ul>
+<li>Monge 문제</li>
+<li>Kantorovich 완화</li>
+<li>수송계획</li>
+<li>Wasserstein 거리</li>
+<li>Earth mover's distance</li>
+<li>Kantorovich duality</li>
+<li>Sinkhorn algorithm</li>
+<li>Entropy-regularized OT</li>
+<li>Brenier theorem 개요</li>
+<li>Wasserstein gradient flow</li>
+<li>Sliced Wasserstein distance</li>
+<li>Gromov-Wasserstein distance</li>
+<li>Distribution alignment</li>
+<li>Domain adaptation과의 연결</li>
+<li>Generative modeling과의 연결</li>
+</ul>
+<h2 id="63.-미분기하-선행-20-41">63. 미분기하 (선행: 20, 41)</h2>
+<ul>
+<li>다양체</li>
+<li>좌표계, 차트, 아틀라스</li>
+<li>매끄러운 다양체</li>
+<li>접공간과 접벡터</li>
+<li>Cotangent space</li>
+<li>벡터장 (다양체 위)</li>
+<li>텐서 (기하 관점)</li>
+<li>미분형식 (canonical)</li>
+<li>외미분</li>
+<li>Pullback과 pushforward</li>
+<li>Riemannian metric</li>
+<li>길이와 거리 (다양체)</li>
+<li>측지선</li>
+<li>연결과 공변미분</li>
+<li>곡률과 리치곡률</li>
+<li>라플라스-벨트라미 연산자</li>
+<li>리만 다양체</li>
+<li>정보기하와의 연결</li>
+<li>Manifold hypothesis</li>
+</ul>
+<h2 id="64.-정보기하-선행-63-61-32">64. 정보기하 (선행: 63, 61, 32)</h2>
+<ul>
+<li>통계다양체</li>
+<li>Fisher information metric</li>
+<li>Score function (기하 관점, canonical: 32)</li>
+<li>Exponential family (기하 관점)</li>
+<li>Mixture family</li>
+<li>e-connection과 m-connection</li>
+<li>KL divergence as geometry</li>
+<li>Natural gradient (Amari)</li>
+<li>Dual flatness</li>
+<li>Bregman divergence (canonical: 55)</li>
+<li>Mirror descent와의 연결</li>
+<li>Variational inference와의 연결</li>
+</ul>
+<h2 id="65.-커널과-rkhs-선행-42-21-27">65. 커널과 RKHS (선행: 42, 21, 27) ✱</h2>
+<ul>
+<li>Positive definite kernel</li>
+<li>Gram matrix</li>
+<li>Mercer theorem</li>
+<li>Feature map</li>
+<li>Kernel trick</li>
+<li>RKHS (canonical)</li>
+<li>Reproducing property</li>
+<li>Representer theorem</li>
+<li>Kernel ridge regression</li>
+<li>Gaussian process (← 27 다변량 정규) ✱</li>
+<li>Covariance kernel</li>
+<li>Neural Tangent Kernel (NTK, canonical: 70)</li>
+<li>Integral operator</li>
+<li>Kernel PCA</li>
+<li>MMD</li>
+<li>Kernel mean embedding</li>
+<li>Characteristic kernel</li>
+</ul>
+<hr>
+<h1 id="phase-14.-확률과정과-확률해석">Phase 14. 확률과정과 확률해석</h1>
+<h2 id="66.-확률과정-선행-26-14-28">66. 확률과정 (선행: 26, 14, 28) ✱</h2>
+<ul>
+<li>확률과정의 정의</li>
+<li>이산시간 과정과 연속시간 과정</li>
+<li>마르코프 연쇄</li>
+<li>전이행렬</li>
+<li>Chapman-Kolmogorov 방정식</li>
+<li>정상분포 (stationary distribution)</li>
+<li>흡수상태</li>
+<li>Ergodicity</li>
+<li>랜덤워크</li>
+<li>포아송 과정</li>
+<li>갱신과정</li>
+<li>Birth-death process</li>
+<li>마팅게일 (← 28 조건부기댓값·Tower property) ✱</li>
+<li>Submartingale과 supermartingale</li>
+<li>Optional stopping theorem</li>
+</ul>
+<h2 id="67.-확률미분방정식과-확산-신설-분리-선행-66-44">67. 확률미분방정식과 확산 【신설 분리】 (선행: 66, 44)</h2>
+<ul>
+<li>브라운 운동 / 위너 과정</li>
+<li>확산과정</li>
+<li>Ito 적분</li>
+<li>Ito lemma</li>
+<li>확률미분방정식 (SDE)</li>
+<li>Ornstein-Uhlenbeck 과정 ➕</li>
+<li>Langevin dynamics</li>
+<li>Fokker-Planck 방정식</li>
+<li>Score function과 확산모델 연결 ➕</li>
+<li>Girsanov 정리 개요 ➕</li>
+</ul>
+<h2 id="68.-몬테카를로와-샘플링-선행-66-33">68. 몬테카를로와 샘플링 (선행: 66, 33)</h2>
+<ul>
+<li>난수와 의사난수</li>
+<li>역변환 샘플링</li>
+<li>기각 샘플링</li>
+<li>중요도 샘플링</li>
+<li>계층적 샘플링</li>
+<li>몬테카를로 적분</li>
+<li>분산감소</li>
+<li>Markov Chain Monte Carlo (MCMC)</li>
+<li>Metropolis-Hastings</li>
+<li>Gibbs sampling</li>
+<li>Hamiltonian Monte Carlo</li>
+<li>Langevin MCMC (연계: 67)</li>
+<li>Sequential Monte Carlo</li>
+<li>Particle filter</li>
+<li>Bootstrap sampling과 resampling (canonical: 35) ✱</li>
+<li>Effective sample size</li>
+</ul>
+<h2 id="69.-랜덤행렬이론-신설-선행-21-28">69. 랜덤행렬이론 【신설】 (선행: 21, 28)</h2>
+<ul>
+<li>랜덤 행렬 ➕</li>
+<li>Wigner 행렬과 반원 법칙 ➕</li>
+<li>Wishart 행렬 ➕</li>
+<li>Marchenko-Pastur 법칙 ➕</li>
+<li>Empirical spectral distribution ➕</li>
+<li>Stieltjes 변환 개요 ➕</li>
+<li>스파이크 공분산 모델 ➕</li>
+<li>BBP 전이 개요 ➕</li>
+<li>고유값 벌크, 에지, 이상치 ➕</li>
+<li>자유확률 개요 ➕</li>
+<li>신경망 가중치/Hessian 스펙트럼 응용 ➕</li>
+</ul>
+<hr>
+<h1 id="phase-15.-이론적-ml-수학">Phase 15. 이론적 ML 수학</h1>
+<h2 id="70.-학습이론-선행-30-55">70. 학습이론 (선행: 30, 55)</h2>
+<ul>
+<li>경험위험과 기대위험</li>
+<li>일반화오차</li>
+<li>Approximation / estimation / optimization error 분해</li>
+<li>PAC learning</li>
+<li>Sample complexity</li>
+<li>VC dimension</li>
+<li>Growth function</li>
+<li>Sauer-Shelah lemma</li>
+<li>Rademacher complexity</li>
+<li>Covering number</li>
+<li>Uniform convergence</li>
+<li>Stability bound</li>
+<li>Bias-variance tradeoff (학습이론 관점)</li>
+<li>No free lunch theorem</li>
+<li>Margin bound</li>
+<li>Compression bound</li>
+<li>PAC-Bayes bound</li>
+<li>Implicit regularization</li>
+<li>Double descent</li>
+<li>Benign overfitting</li>
+<li>Neural Tangent Kernel (canonical)</li>
+<li>Gaussian process limit</li>
+<li>Mean-field theory 개요</li>
+</ul>
+<h2 id="71.-근사이론-선행-8-42-50">71. 근사이론 (선행: 8, 42, 50)</h2>
+<ul>
+<li>함수근사</li>
+<li>다항근사</li>
+<li>Weierstrass 근사정리 (canonical)</li>
+<li>Stone-Weierstrass 정리</li>
+<li>Fourier approximation</li>
+<li>Spline approximation</li>
+<li>Wavelet approximation</li>
+<li>Universal approximation theorem</li>
+<li>Barron space</li>
+<li>Approximation rate</li>
+<li>Curse of dimensionality (canonical: 78 허브 연계)</li>
+<li>Sparse approximation</li>
+<li>Low-rank approximation (canonical: 23) ✱</li>
+<li>Tensor decomposition (canonical: 72)</li>
+<li>Kolmogorov n-width</li>
+<li>Expressivity of neural networks</li>
+</ul>
+<h2 id="72.-텐서와-다중선형대수-선행-21-25">72. 텐서와 다중선형대수 (선행: 21, 25)</h2>
+<ul>
+<li>텐서</li>
+<li>텐서곱</li>
+<li>다중선형사상</li>
+<li>Kronecker product (canonical: 24; 텐서 관점 심화) ✱</li>
+<li>Khatri-Rao product</li>
+<li>Hadamard product (canonical: 24; 텐서 관점 심화) ✱</li>
+<li>Tensor contraction</li>
+<li>Tensor rank</li>
+<li>CP decomposition</li>
+<li>Tucker decomposition</li>
+<li>Tensor train</li>
+<li>Einstein summation</li>
+<li>Covariance tensor</li>
+<li>Attention tensor</li>
+<li>Tensor networks</li>
+<li>Low-rank tensor approximation</li>
+</ul>
+<h2 id="73.-게임이론과-미니맥스-신설-선행-55-26">73. 게임이론과 미니맥스 【신설】 (선행: 55, 26)</h2>
+<ul>
+<li>정규형 게임 ➕</li>
+<li>지배전략 ➕</li>
+<li>내쉬 균형 ➕</li>
+<li>혼합전략 ➕</li>
+<li>폰 노이만 미니맥스 정리 ➕</li>
+<li>볼록-오목 안장점 문제 ➕</li>
+<li>영합게임과 LP 쌍대성 ➕</li>
+<li>Regret과 온라인 학습 개요 ➕</li>
+<li>GAN의 미니맥스 구조 연결 ➕</li>
+</ul>
+<hr>
+<h1 id="phase-16.-구조-수학-장기">Phase 16. 구조 수학 (장기)</h1>
+<h2 id="74.-추상대수-선행-2">74. 추상대수 (선행: 2)</h2>
+<ul>
+<li>군과 부분군</li>
+<li>순환군</li>
+<li>치환군</li>
+<li>동형사상과 준동형사상</li>
+<li>정규부분군과 몫군</li>
+<li>군 작용</li>
+<li>궤도와 안정자</li>
+<li>군과 대칭성 ➕</li>
+<li>군 표현론 개요 ➕ (equivariant network 연결)</li>
+<li>환과 아이디얼</li>
+<li>몫환</li>
+<li>체와 체 확장</li>
+<li>다항식환</li>
+<li>모듈</li>
+<li>Vector space as module</li>
+<li>격자</li>
+<li>반군과 모노이드</li>
+</ul>
+<h2 id="75.-범주론-선행-74">75. 범주론 (선행: 74)</h2>
+<ul>
+<li>Category, object, morphism</li>
+<li>Identity morphism과 composition</li>
+<li>Functor</li>
+<li>Natural transformation</li>
+<li>Product와 coproduct</li>
+<li>Limit과 colimit</li>
+<li>Adjunction</li>
+<li>Monad</li>
+<li>Compositionality</li>
+<li>Type theory와의 연결</li>
+<li>Programming language semantics와의 연결</li>
+</ul>
+<h2 id="76.-타입이론과-형식화-선행-1-75">76. 타입이론과 형식화 (선행: 1, 75)</h2>
+<ul>
+<li>Formal language</li>
+<li>Syntax와 semantics</li>
+<li>Type</li>
+<li>Simply typed lambda calculus</li>
+<li>Dependent type</li>
+<li>Curry-Howard correspondence</li>
+<li>Proof assistant</li>
+<li>Theorem proving</li>
+<li>Lean / Coq / Isabelle</li>
+<li>Constructive mathematics</li>
+<li>Formal proof</li>
+<li>AI theorem proving과의 연결</li>
+</ul>
+<hr>
+<h1 id="phase-17.-수학적-물리-종착-노드-신설-분리">Phase 17. 수학적 물리 (종착 노드) 【신설 분리】 ✱</h1>
+<blockquote><p>✱ 구 Phase 16 소속이었으나 선행(48 변분법, 67 SDE)이 P8·P14에 걸쳐 있어 분리. P16은 이제 "선행: P0"이 참.</p></blockquote>
+<h2 id="77.-수학적-물리-선행-48-67">77. 수학적 물리 (선행: 48, 67)</h2>
+<ul>
+<li>라그랑지안 (canonical)</li>
+<li>해밀토니안 (canonical)</li>
+<li>보존법칙</li>
+<li>Noether theorem 개요</li>
+<li>위상공간 (물리)</li>
+<li>Canonical coordinates</li>
+<li>Symplectic geometry 개요</li>
+<li>Hamiltonian dynamics</li>
+<li>Diffusion equation (canonical: 47 열방정식)</li>
+<li>Fokker-Planck (canonical: 67)</li>
+<li>Schrödinger equation 개요</li>
+<li>Statistical mechanics 개요</li>
+<li>Partition function</li>
+<li>Energy-based model과의 연결</li>
+</ul>
+<hr>
+<h1 id="78.-ai-in-math-허브-수학-목차-밖의-연결-허브">78. AI in Math 허브 【수학 목차 밖의 연결 허브】</h1>
+<blockquote><p>이 장은 수학 노트가 아니라, 수학↔AI 경계 노드들의 MOC.</p>
+<p>각 항목은 canonical 수학 노트와 AI 노트를 동시에 링크하는 다리 역할.</p></blockquote>
+<ul>
+<li>Backpropagation (← 25 행렬미분, 17 체인룰)</li>
+<li>Loss landscape (← 18, 46, 69)</li>
+<li>Representation space / embedding space (← 15, 22) ✱</li>
+<li>Manifold hypothesis (← 63)</li>
+<li>Curse of dimensionality (← 30, 71)</li>
+<li>Concentration of measure (← 30)</li>
+<li>Random projection / Johnson-Lindenstrauss (← 30)</li>
+<li>High-dimensional geometry (← 30)</li>
+<li>Lipschitz stability (← 22, 55) ✱</li>
+<li>Spectral bias (← 50, 70)</li>
+<li>Implicit regularization (← 70)</li>
+<li>Information bottleneck (← 61)</li>
+<li>Fisher information (← 32, 64)</li>
+<li>Hessian spectrum (← 21, 69)</li>
+<li>Neural Tangent Kernel (← 65, 70)</li>
+<li>Gaussian process limit (← 65, 70)</li>
+<li>Mean-field limit (← 70)</li>
+<li>Diffusion process와 확산모델 (← 67)</li>
+<li>Score matching (← 67, 32)</li>
+<li>Optimal transport in generative models (← 62)</li>
+<li>Graph Laplacian in GNN (← 60)</li>
+<li>Fourier features (← 50)</li>
+<li>Kernel methods (← 65)</li>
+<li>Variational inference (← 61 ELBO, 33, 64)</li>
+<li>PAC-Bayes bound (← 70)</li>
+<li>Training dynamics as dynamical system (← 46) ➕</li>
+<li>SGD as SDE (← 57, 67) ➕</li>
+<li>Gradient spectrum / 학습신호의 스펙트럼 해석 (← 51, 52) ➕</li>
+</ul>
+<hr>
+<h1 id="중복-키워드-canonical-표">중복 키워드 canonical 표</h1>
+<div class="tbl"><table><thead><tr><th>키워드</th><th>Canonical</th><th>참조하는 장</th></tr></thead><tbody><tr><td>야코비안 행렬</td><td>17</td><td>19, 25, 46</td></tr><tr><td>야코비안 행렬식</td><td>19</td><td>13, 17</td></tr><tr><td>테일러 (1변수/다변수)</td><td>8 / 17</td><td>6, 25</td></tr><tr><td>젠센 부등식</td><td>29</td><td>18, 36, 55, 61</td></tr><tr><td>볼록집합·볼록함수·KKT</td><td>55</td><td>18</td></tr><tr><td>정부호 판정</td><td>21</td><td>18</td></tr><tr><td>QR 분해</td><td>15</td><td>54 (수치 구현)</td></tr><tr><td>Cholesky 분해</td><td>21</td><td>54 (수치 구현)</td></tr><tr><td>조건수</td><td>53</td><td>23, 54 ✱</td></tr><tr><td>특성다항식</td><td>14</td><td>13</td></tr><tr><td>마르코프 연쇄·전이행렬</td><td>66</td><td>14, 60, 68</td></tr><tr><td>시그마 대수</td><td>39</td><td>26</td></tr><tr><td>디랙 델타</td><td>45 ✱</td><td>43 (엄밀화), 50</td></tr><tr><td>Bregman divergence</td><td>55</td><td>64</td></tr><tr><td>Kronecker / Hadamard product</td><td>24 ✱</td><td>72 (텐서 관점 심화)</td></tr><tr><td>NTK</td><td>70</td><td>65</td></tr><tr><td>Lyapunov 함수</td><td>46 ✱</td><td>49 (제어 관점 심화)</td></tr><tr><td>칼만 필터</td><td>36 ✱</td><td>49 (제어 관점)</td></tr><tr><td>Exponential family</td><td>27</td><td>64</td></tr><tr><td>수치적분·유한차분</td><td>53</td><td>7, 47</td></tr><tr><td>Gradient flow</td><td>46</td><td>48, 62</td></tr><tr><td>Fisher information</td><td>32</td><td>64</td></tr><tr><td>핵노름</td><td>23 ✱</td><td>22</td></tr><tr><td>저계수 근사</td><td>23 ✱</td><td>71</td></tr><tr><td>행렬지수</td><td>24 ✱</td><td>44, 46</td></tr><tr><td>공분산 행렬·정밀도 행렬·Mahalanobis</td><td>28 ✱</td><td>21</td></tr><tr><td>상태공간 모델</td><td>36 ✱</td><td>49</td></tr><tr><td>컴팩트성·연결성</td><td>41 ✱</td><td>16 (개요), 38 (Rⁿ/Heine-Borel)</td></tr><tr><td>뉴턴 방법</td><td>6 ✱</td><td>53 (수치), 56 (다변수)</td></tr><tr><td>Bootstrap</td><td>35 ✱</td><td>68</td></tr><tr><td>최소제곱</td><td>15 ✱</td><td>35 (통계 관점)</td></tr><tr><td>오차전파</td><td>5 ✱</td><td>53 (수치 관점)</td></tr><tr><td>마팅게일</td><td>66 ✱</td><td>30 (Azuma; 참조 측 자족 서술)</td></tr><tr><td>Lp 공간</td><td>39 ✱</td><td>42 (함수해석 관점) — 22의 Lp 노름(유한차원)은 별개 노트</td></tr></tbody></table></div>
+<hr>
+<h1 id="운영-규칙-요약">운영 규칙 (요약)</h1>
+<ol>
+<li><strong>노트 1개 = 개념 1개.</strong> 같은 개념이 여러 장에 나오면 canonical 장에서만 본문을 쓰고 나머지는 링크.</li>
+<li>✱ <strong>Canonical 방향 규칙</strong>: canonical 장은 원칙적으로 학습 순서상 그 개념이 처음 실질적으로 등장하는 장에 둔다. 뒤쪽 장을 canonical로 두는 <code>개요 (canonical: 뒤 장)</code> 패턴은 허용하되, canonical 노트가 아직 없는 동안 필요하면 참조하는 쪽에 2–3줄 자족 정의를 둔다 (예: 30의 Azuma, 60의 전이행렬, 45의 임펄스 응답).</li>
+<li><strong>수학 노트 템플릿</strong>: 정의 → 직관 → 성질/정리 → 예시 → <code>## AI in Math</code> (링크 + 한 줄).</li>
+<li><strong>작성 순서</strong>: 공부 진도(트랙 F 권장)에 맞춰 채우고, 아직 도달하지 않은 장은 스텁으로 둔다.</li>
+<li><strong>미적분·선형대수 수강과 병행 시</strong>: Phase 1–2를 교재 진도에 맞춰 채우고, 나머지 트랙은 주말에 병렬 진행.</li>
+<li><strong>➕ 항목</strong>은 지난 개정 추가분, <strong>✱ 항목</strong>은 이번 선행구조 개정(2026-07-04) 변경분.</li>
+</ol>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="";</script>
+<script src="search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="assets/app.js"></script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=document.documentElement.dataset.theme==='dark'||
+ (!document.documentElement.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);
+mermaid.initialize({startOnLoad:true,theme:dark?'dark':'default'});
+</script>
+</body></html>

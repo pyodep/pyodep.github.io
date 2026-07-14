@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02. 집합과 함수 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="02. 집합과 함수 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">수학 기초</a></div><h1>02. 집합과 함수</h1><div class="post-meta"><span>원자 노트 20개 · 작성 0개</span></div><blockquote><p>Phase 0 · 수학 기초 · 선행: <a class="wl" href="01.%20%EB%85%BC%EB%A6%AC%EC%99%80%20%EC%A6%9D%EB%AA%85.html">논리와 증명</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%A7%91%ED%95%A9.html">집합</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9.html">부분집합</a></li>
+<li><a class="wl wl-stub" href="%ED%95%A9%EC%A7%91%ED%95%A9%2C%20%EA%B5%90%EC%A7%91%ED%95%A9%2C%20%EC%B0%A8%EC%A7%91%ED%95%A9.html">합집합, 교집합, 차집합</a></li>
+<li><a class="wl wl-stub" href="%EC%97%AC%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%93%9C%EB%AA%A8%EB%A5%B4%EA%B0%84%20%EB%B2%95%EC%B9%99.html">여집합과 드모르간 법칙</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%B1%EC%A7%91%ED%95%A9.html">곱집합</a></li>
+<li><a class="wl wl-stub" href="%EB%A9%B1%EC%A7%91%ED%95%A9.html">멱집합</a></li>
+<li><a class="wl wl-stub" href="%EA%B4%80%EA%B3%84.html">관계</a></li>
+<li><a class="wl wl-stub" href="%EB%8F%99%EC%B9%98%EA%B4%80%EA%B3%84.html">동치관계</a></li>
+<li><a class="wl wl-stub" href="%EB%8F%99%EC%B9%98%EB%A5%98.html">동치류</a></li>
+<li><a class="wl wl-stub" href="%EC%88%9C%EC%84%9C%EA%B4%80%EA%B3%84.html">순서관계</a></li>
+<li><a class="wl wl-stub" href="%ED%95%A8%EC%88%98%EC%9D%98%20%EC%A0%95%EC%9D%98%20%28%EC%A7%91%ED%95%A9%EB%A1%A0%EC%A0%81%29.html">함수의 정의 (집합론적)</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%95%EC%9D%98%EC%97%AD%2C%20%EA%B3%B5%EC%97%AD%2C%20%EC%B9%98%EC%97%AD.html">정의역, 공역, 치역</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%A8%EC%82%AC%2C%20%EC%A0%84%EC%82%AC%2C%20%EC%A0%84%EB%8B%A8%EC%82%AC.html">단사, 전사, 전단사</a></li>
+<li><a class="wl wl-stub" href="%ED%95%A9%EC%84%B1%ED%95%A8%EC%88%98.html">합성함수</a></li>
+<li><a class="wl wl-stub" href="%EC%97%AD%ED%95%A8%EC%88%98.html">역함수</a></li>
+<li><a class="wl wl-stub" href="%EC%83%81%EA%B3%BC%20%EC%9B%90%EC%83%81.html">상과 원상</a></li>
+<li><a class="wl wl-stub" href="%EA%B0%80%EC%82%B0%EC%A7%91%ED%95%A9.html">가산집합</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%EA%B0%80%EC%82%B0%EC%A7%91%ED%95%A9.html">비가산집합</a></li>
+<li><a class="wl wl-stub" href="%EC%B9%B8%ED%86%A0%EC%96%B4%20%EB%8C%80%EA%B0%81%EC%84%A0%20%EB%85%BC%EB%B2%95.html">칸토어 대각선 논법</a></li>
+<li><a class="wl wl-stub" href="%EB%86%8D%EB%8F%84.html">농도</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

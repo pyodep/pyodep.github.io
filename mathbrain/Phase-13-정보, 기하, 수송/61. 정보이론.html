@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>61. 정보이론 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="61. 정보이론 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">정보, 기하, 수송</a></div><h1>61. 정보이론</h1><div class="post-meta"><span>원자 노트 23개 · 작성 0개</span></div><blockquote><p>Phase 13 · 정보, 기하, 수송 · 선행: <a class="wl" href="../Phase-05-%ED%99%95%EB%A5%A0/27.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC.html">주요 확률분포</a>, <a class="wl" href="../Phase-05-%ED%99%95%EB%A5%A0/29.%20%ED%99%95%EB%A5%A0%20%EB%B6%80%EB%93%B1%EC%8B%9D%EA%B3%BC%20%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC.html">확률 부등식과 극한정리</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%9E%90%EA%B8%B0%EC%A0%95%EB%B3%B4%EB%9F%89.html">자기정보량</a></li>
+<li><a class="wl wl-stub" href="%EC%84%80%EB%84%8C%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC.html">섀넌 엔트로피</a></li>
+<li><a class="wl wl-stub" href="%EA%B2%B0%ED%95%A9%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC%EC%99%80%20%EC%A1%B0%EA%B1%B4%EB%B6%80%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC.html">결합 엔트로피와 조건부 엔트로피</a></li>
+<li><a class="wl wl-stub" href="Chain%20rule%20for%20entropy.html">Chain rule for entropy</a></li>
+<li><a class="wl wl-stub" href="Cross%20entropy.html">Cross entropy</a></li>
+<li><a class="wl wl-stub" href="KL%20divergence.html">KL divergence</a></li>
+<li><a class="wl wl-stub" href="Gibbs%20inequality.html">Gibbs inequality</a></li>
+<li><a class="wl wl-stub" href="%EC%83%81%ED%98%B8%EC%A0%95%EB%B3%B4%EB%9F%89%EA%B3%BC%20%EC%A1%B0%EA%B1%B4%EB%B6%80%20%EC%83%81%ED%98%B8%EC%A0%95%EB%B3%B4%EB%9F%89.html">상호정보량과 조건부 상호정보량</a></li>
+<li><a class="wl wl-stub" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%20%EB%B6%80%EB%93%B1%EC%8B%9D.html">데이터 처리 부등식</a></li>
+<li><a class="wl wl-stub" href="Jensen-Shannon%20divergence.html">Jensen-Shannon divergence</a></li>
+<li><a class="wl wl-stub" href="f-divergence.html">f-divergence</a></li>
+<li><a class="wl wl-stub" href="R%C3%A9nyi%20entropy.html">Rényi entropy</a></li>
+<li><a class="wl wl-stub" href="Differential%20entropy.html">Differential entropy</a></li>
+<li><a class="wl wl-stub" href="%EC%B5%9C%EB%8C%80%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC%20%EC%9B%90%EB%A6%AC.html">최대 엔트로피 원리</a></li>
+<li><a class="wl wl-stub" href="Source%20coding%20theorem.html">Source coding theorem</a></li>
+<li><a class="wl wl-stub" href="Channel%20capacity.html">Channel capacity</a></li>
+<li><a class="wl wl-stub" href="Rate-distortion%20theory.html">Rate-distortion theory</a></li>
+<li><a class="wl wl-stub" href="MDL.html">MDL</a></li>
+<li><a class="wl wl-stub" href="Perplexity.html">Perplexity</a></li>
+<li><a class="wl wl-stub" href="Information%20bottleneck.html">Information bottleneck</a></li>
+<li><a class="wl wl-stub" href="Variational%20information%20bottleneck.html">Variational information bottleneck</a></li>
+<li><a class="wl wl-stub" href="ELBO.html">ELBO</a></li>
+<li><a class="wl wl-stub" href="Bits-back%20coding.html">Bits-back coding</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

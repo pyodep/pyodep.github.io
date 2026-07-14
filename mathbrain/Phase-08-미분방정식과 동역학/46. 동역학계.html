@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>46. 동역학계 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="46. 동역학계 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">미분방정식과 동역학</a></div><h1>46. 동역학계</h1><div class="post-meta"><span>원자 노트 19개 · 작성 0개</span></div><blockquote><p>Phase 8 · 미분방정식과 동역학 · 선행: <a class="wl" href="44.%20%EC%83%81%EB%AF%B8%EB%B6%84%EB%B0%A9%EC%A0%95%EC%8B%9D.html">상미분방정식</a>, <a class="wl" href="../Phase-03-%EB%8B%A4%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/17.%20%ED%8E%B8%EB%AF%B8%EB%B6%84%EA%B3%BC%20%EC%A0%84%EB%AF%B8%EB%B6%84.html">편미분과 전미분</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%84%A0%ED%98%95%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20x%27%20%3D%20Ax.html">선형 시스템 x' = Ax</a></li>
+<li><a class="wl wl-stub" href="%EC%95%88%EC%A0%95%EC%84%B1%EA%B3%BC%20%EA%B3%A0%EC%9C%A0%EA%B0%92.html">안정성과 고유값</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%EC%84%A0%ED%98%95%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html">비선형 시스템</a></li>
+<li><a class="wl wl-stub" href="%EC%83%81%ED%8F%89%EB%A9%B4%EA%B3%BC%20%EC%9C%84%EC%83%81%EC%B4%88%EC%83%81.html">상평면과 위상초상</a></li>
+<li><a class="wl wl-stub" href="%ED%8F%89%ED%98%95%EC%A0%90.html">평형점</a></li>
+<li><a class="wl wl-stub" href="%EC%95%88%EC%A0%95%EC%84%B1.html">안정성</a></li>
+<li><a class="wl wl-stub" href="Lyapunov%20%EC%95%88%EC%A0%95%EC%84%B1.html">Lyapunov 안정성</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%90%EA%B7%BC%EC%95%88%EC%A0%95%EC%84%B1%EA%B3%BC%20%EB%B6%88%EC%95%88%EC%A0%95%EC%84%B1.html">점근안정성과 불안정성</a></li>
+<li><a class="wl wl-stub" href="Lyapunov%20%ED%95%A8%EC%88%98.html">Lyapunov 함수</a></li>
+<li><a class="wl wl-stub" href="%EC%84%A0%ED%98%95%ED%99%94%EC%99%80%20%EC%95%BC%EC%BD%94%EB%B9%84%EC%95%88%20%EC%95%88%EC%A0%95%EC%84%B1%20%ED%8C%90%EC%A0%95.html">선형화와 야코비안 안정성 판정</a></li>
+<li><a class="wl wl-stub" href="%EC%9E%84%EA%B3%84%EC%A0%90%20%EB%B6%84%EB%A5%98%20%28%EB%85%B8%EB%93%9C%2C%20%EC%95%88%EC%9E%A5%EC%A0%90%2C%20%EC%A4%91%EC%8B%AC%2C%20%EB%82%98%EC%84%A0%29.html">임계점 분류 (노드, 안장점, 중심, 나선)</a></li>
+<li><a class="wl wl-stub" href="Limit%20cycle.html">Limit cycle</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%84%EA%B8%B0%20%28bifurcation%29.html">분기 (bifurcation)</a></li>
+<li><a class="wl wl-stub" href="%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%20%EB%A7%B5.html">로지스틱 맵</a></li>
+<li><a class="wl wl-stub" href="Chaos.html">Chaos</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%BC%EA%B0%90%ED%95%9C%20%EC%B4%88%EA%B8%B0%EC%A1%B0%EA%B1%B4.html">민감한 초기조건</a></li>
+<li><a class="wl wl-stub" href="Lyapunov%20exponent.html">Lyapunov exponent</a></li>
+<li><a class="wl wl-stub" href="Gradient%20flow.html">Gradient flow</a></li>
+<li><a class="wl wl-stub" href="%ED%95%99%EC%8A%B5%20%EB%8F%99%EC%97%AD%ED%95%99%EC%9D%84%20%EB%8F%99%EC%97%AD%ED%95%99%EA%B3%84%EB%A1%9C%20%EB%B3%B4%EA%B8%B0%20%28training%20dynamics%20as%20dynamical%20system%29.html">학습 동역학을 동역학계로 보기 (training dynamics as dynamical system)</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

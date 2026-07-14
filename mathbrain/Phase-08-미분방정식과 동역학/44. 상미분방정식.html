@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>44. 상미분방정식 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="44. 상미분방정식 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">미분방정식과 동역학</a></div><h1>44. 상미분방정식</h1><div class="post-meta"><span>원자 노트 19개 · 작성 0개</span></div><blockquote><p>Phase 8 · 미분방정식과 동역학 · 선행: <a class="wl" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/07.%20%EC%A0%81%EB%B6%84.html">적분</a>, <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/14.%20%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC%20%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC.html">고유값과 스펙트럼</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EB%B6%84%EB%B0%A9%EC%A0%95%EC%8B%9D%EC%9D%98%20%EB%B6%84%EB%A5%98%20%28ODE-PDE%29.html">미분방정식의 분류 (ODE/PDE)</a></li>
+<li><a class="wl wl-stub" href="%EC%B4%88%EA%B8%B0%EA%B0%92%20%EB%AC%B8%EC%A0%9C%EC%99%80%20%EA%B2%BD%EA%B3%84%EA%B0%92%20%EB%AC%B8%EC%A0%9C.html">초기값 문제와 경계값 문제</a></li>
+<li><a class="wl wl-stub" href="%EB%B3%80%EC%88%98%EB%B6%84%EB%A6%AC%ED%98%95%20ODE.html">변수분리형 ODE</a></li>
+<li><a class="wl wl-stub" href="%EC%99%84%EC%A0%84%EB%AF%B8%EB%B6%84%EB%B0%A9%EC%A0%95%EC%8B%9D.html">완전미분방정식</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%81%EB%B6%84%EC%9D%B8%EC%9E%90.html">적분인자</a></li>
+<li><a class="wl wl-stub" href="1%EA%B3%84%20%EC%84%A0%ED%98%95%20ODE.html">1계 선형 ODE</a></li>
+<li><a class="wl wl-stub" href="%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4%20%EB%B0%A9%EC%A0%95%EC%8B%9D.html">베르누이 방정식</a></li>
+<li><a class="wl wl-stub" href="%EB%B0%A9%ED%96%A5%EC%9E%A5.html">방향장</a></li>
+<li><a class="wl wl-stub" href="%ED%94%BC%EC%B9%B4%EB%A5%B4-%EB%A6%B0%EB%8D%B8%EB%A2%B0%ED%94%84%20%EC%A0%95%EB%A6%AC%20%28%ED%95%B4%EC%9D%98%20%EC%A1%B4%EC%9E%AC%EC%99%80%20%EC%9C%A0%EC%9D%BC%EC%84%B1%29.html">피카르-린델뢰프 정리 (해의 존재와 유일성)</a></li>
+<li><a class="wl wl-stub" href="%EC%84%A0%ED%98%95%20ODE%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EA%B3%A0%EC%9C%A0%EA%B0%92.html">선형 ODE 시스템과 고유값</a></li>
+<li><a class="wl wl-stub" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/%ED%96%89%EB%A0%AC%EC%A7%80%EC%88%98%20%ED%95%B4%20x%28t%29%20%3D%20e%5E%7BAt%7Dx%E2%82%80.html">행렬지수 해 x(t) = e^{At}x₀</a>  ·(canonical → <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/24.%20%ED%96%89%EB%A0%AC%20%ED%95%AD%EB%93%B1%EC%8B%9D%EA%B3%BC%20%EB%B8%94%EB%A1%9D%ED%96%89%EB%A0%AC.html">24장</a>)</li>
+<li><a class="wl wl-stub" href="2%EA%B3%84%20%EC%84%A0%ED%98%95%20ODE.html">2계 선형 ODE</a></li>
+<li><a class="wl wl-stub" href="%ED%8A%B9%EC%84%B1%EB%B0%A9%EC%A0%95%EC%8B%9D.html">특성방정식</a></li>
+<li><a class="wl wl-stub" href="%EB%8F%99%EC%B0%A8%EB%B0%A9%EC%A0%95%EC%8B%9D%EA%B3%BC%20%EB%B9%84%EB%8F%99%EC%B0%A8%EB%B0%A9%EC%A0%95%EC%8B%9D.html">동차방정식과 비동차방정식</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EC%A0%95%EA%B3%84%EC%88%98%EB%B2%95.html">미정계수법</a></li>
+<li><a class="wl wl-stub" href="%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%20%EB%B3%80%ED%99%94%EB%B2%95.html">매개변수 변화법</a></li>
+<li><a class="wl wl-stub" href="%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%BD%94%EC%8B%9C%20%EB%B0%A9%EC%A0%95%EC%8B%9D.html">오일러-코시 방정식</a></li>
+<li><a class="wl wl-stub" href="%EA%B0%90%EC%87%A0%EC%A7%84%EB%8F%99%2C%20%EA%B0%95%EC%A0%9C%EC%A7%84%EB%8F%99%2C%20%EA%B3%B5%EC%A7%84.html">감쇠진동, 강제진동, 공진</a></li>
+<li><a class="wl wl-stub" href="Green%20%ED%95%A8%EC%88%98%20%28ODE%29.html">Green 함수 (ODE)</a></li>
+<li><a class="wl wl-stub" href="Sturm-Liouville%20%EB%AC%B8%EC%A0%9C.html">Sturm-Liouville 문제</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

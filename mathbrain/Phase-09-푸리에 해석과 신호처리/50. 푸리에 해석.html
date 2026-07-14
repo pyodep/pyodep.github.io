@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>50. 푸리에 해석 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="50. 푸리에 해석 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">푸리에 해석과 신호처리</a></div><h1>50. 푸리에 해석</h1><div class="post-meta"><span>원자 노트 15개 · 작성 0개</span></div><blockquote><p>Phase 9 · 푸리에 해석과 신호처리 · 선행: <a class="wl" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/08.%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EA%B8%89%EC%88%98.html">수열과 급수</a>, <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/15.%20%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%A7%81%EA%B5%90%EC%84%B1.html">내적공간과 직교성</a>, <a class="wl" href="../Phase-08-%EB%AF%B8%EB%B6%84%EB%B0%A9%EC%A0%95%EC%8B%9D%EA%B3%BC%20%EB%8F%99%EC%97%AD%ED%95%99/45.%20%EB%9D%BC%ED%94%8C%EB%9D%BC%EC%8A%A4%20%EB%B3%80%ED%99%98.html">라플라스 변환</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%A3%BC%EA%B8%B0%ED%95%A8%EC%88%98%EC%99%80%20%EC%82%BC%EA%B0%81%EA%B8%89%EC%88%98.html">주기함수와 삼각급수</a></li>
+<li><a class="wl wl-stub" href="%ED%91%B8%EB%A6%AC%EC%97%90%20%EA%B8%89%EC%88%98.html">푸리에 급수</a></li>
+<li><a class="wl wl-stub" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/%ED%91%B8%EB%A6%AC%EC%97%90%20%EA%B3%84%EC%88%98.html">푸리에 계수</a></li>
+<li><a class="wl wl-stub" href="%EB%B3%B5%EC%86%8C%20%ED%91%B8%EB%A6%AC%EC%97%90%20%EA%B8%89%EC%88%98.html">복소 푸리에 급수</a></li>
+<li><a class="wl wl-stub" href="%EB%94%94%EB%A6%AC%ED%81%B4%EB%A0%88%20%EC%A1%B0%EA%B1%B4.html">디리클레 조건</a></li>
+<li><a class="wl wl-stub" href="%EA%B9%81%EC%8A%A4%20%ED%98%84%EC%83%81.html">깁스 현상</a></li>
+<li><a class="wl wl-stub" href="%ED%91%B8%EB%A6%AC%EC%97%90%20%EB%B3%80%ED%99%98%EA%B3%BC%20%EC%97%AD%EB%B3%80%ED%99%98.html">푸리에 변환과 역변환</a></li>
+<li><a class="wl wl-stub" href="%ED%91%B8%EB%A6%AC%EC%97%90%20%EB%B3%80%ED%99%98%EC%9D%98%20%EC%84%B1%EC%A7%88.html">푸리에 변환의 성질</a></li>
+<li><a class="wl wl-stub" href="%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%A0%95%EB%A6%AC%20%28%ED%91%B8%EB%A6%AC%EC%97%90%29.html">합성곱 정리 (푸리에)</a></li>
+<li><a class="wl wl-stub" href="%ED%8C%8C%EB%A5%B4%EC%84%B8%EB%B0%9C%20%EC%A0%95%EB%A6%AC.html">파르세발 정리</a></li>
+<li><a class="wl wl-stub" href="%ED%94%8C%EB%9E%91%EC%85%B0%EB%A0%90%20%EC%A0%95%EB%A6%AC.html">플랑셰렐 정리</a></li>
+<li><a class="wl wl-stub" href="%ED%8F%AC%EC%95%84%EC%86%A1%20%ED%95%A9%20%EA%B3%B5%EC%8B%9D.html">포아송 합 공식</a></li>
+<li><a class="wl wl-stub" href="%EC%84%80%EB%84%8C%20%EC%83%98%ED%94%8C%EB%A7%81%20%EC%A0%95%EB%A6%AC.html">섀넌 샘플링 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%88%ED%99%95%EC%A0%95%EC%84%B1%20%EC%9B%90%EB%A6%AC.html">불확정성 원리</a></li>
+<li><a class="wl wl-stub" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/%EB%B6%84%ED%8F%AC%EB%A1%9C%EC%84%9C%EC%9D%98%20%ED%91%B8%EB%A6%AC%EC%97%90%20%EB%B3%80%ED%99%98.html">분포로서의 푸리에 변환</a>  ·(canonical → <a class="wl" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/43.%20%EB%B6%84%ED%8F%AC%EC%99%80%20%EC%9D%BC%EB%B0%98%ED%99%94%ED%95%A8%EC%88%98.html">43장</a>)</li>
+<li><a class="wl wl-stub" href="%EC%A3%BC%ED%8C%8C%EC%88%98%20%EC%98%81%EC%97%AD.html">주파수 영역</a></li>
+<li><a class="wl wl-stub" href="%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC%20%ED%95%B4%EC%84%9D.html">스펙트럼 해석</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

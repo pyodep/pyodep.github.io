@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>35. 회귀와 통계모델 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="35. 회귀와 통계모델 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">통계</a></div><h1>35. 회귀와 통계모델</h1><div class="post-meta"><span>원자 노트 17개 · 작성 0개</span></div><blockquote><p>Phase 6 · 통계 · 선행: <a class="wl" href="31.%20%ED%86%B5%EA%B3%84%ED%95%99%20%EA%B8%B0%EC%B4%88.html">통계학 기초</a>, <a class="wl" href="32.%20%EC%A0%90%EC%B6%94%EC%A0%95.html">점추정</a>, <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/15.%20%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%A7%81%EA%B5%90%EC%84%B1.html">내적공간과 직교성</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%8B%A8%EC%88%9C%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80.html">단순선형회귀</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80.html">다중선형회귀</a></li>
+<li><a class="wl wl-stub" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/%EC%B5%9C%EC%86%8C%EC%A0%9C%EA%B3%B1%EC%B6%94%EC%A0%95.html">최소제곱추정</a>  ·(canonical → <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/15.%20%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%A7%81%EA%B5%90%EC%84%B1.html">15장</a>)</li>
+<li><a class="wl wl-stub" href="%EA%B0%80%EC%9A%B0%EC%8A%A4-%EB%A7%88%EB%A5%B4%EC%BD%94%ED%94%84%20%EC%A0%95%EB%A6%AC.html">가우스-마르코프 정리</a></li>
+<li><a class="wl wl-stub" href="%EC%9E%94%EC%B0%A8%EC%99%80%20%EC%9E%94%EC%B0%A8%EB%B6%84%EC%84%9D.html">잔차와 잔차분석</a></li>
+<li><a class="wl wl-stub" href="%EA%B2%B0%EC%A0%95%EA%B3%84%EC%88%98.html">결정계수</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%A4%EC%A4%91%EA%B3%B5%EC%84%A0%EC%84%B1.html">다중공선성</a></li>
+<li><a class="wl wl-stub" href="Ridge%20regression.html">Ridge regression</a></li>
+<li><a class="wl wl-stub" href="Lasso.html">Lasso</a></li>
+<li><a class="wl wl-stub" href="Generalized%20Linear%20Model%20%28GLM%29.html">Generalized Linear Model (GLM)</a></li>
+<li><a class="wl wl-stub" href="Link%20function.html">Link function</a></li>
+<li><a class="wl wl-stub" href="Logistic%20regression.html">Logistic regression</a></li>
+<li><a class="wl wl-stub" href="Poisson%20regression.html">Poisson regression</a></li>
+<li><a class="wl wl-stub" href="GLM%EC%97%90%EC%84%9C%EC%9D%98%20MLE.html">GLM에서의 MLE</a></li>
+<li><a class="wl wl-stub" href="%EB%AA%A8%EB%8D%B8%20%EC%84%A0%ED%83%9D-%20AIC%20-%20BIC.html">모델 선택: AIC / BIC</a></li>
+<li><a class="wl wl-stub" href="%EA%B5%90%EC%B0%A8%EA%B2%80%EC%A6%9D.html">교차검증</a></li>
+<li><a class="wl wl-stub" href="Bootstrap.html">Bootstrap</a></li>
+<li><a class="wl wl-stub" href="Causal%20regression.html">Causal regression</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

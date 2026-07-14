@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>42. 함수해석 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="42. 함수해석 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">해석학 심화 (병렬 트랙)</a></div><h1>42. 함수해석</h1><div class="post-meta"><span>원자 노트 20개 · 작성 0개</span></div><blockquote><p>Phase 7 · 해석학 심화 (병렬 트랙) · 선행: <a class="wl" href="39.%20%EC%B8%A1%EB%8F%84%EB%A1%A0.html">측도론</a>, <a class="wl" href="41.%20%EC%9C%84%EC%83%81%EC%88%98%ED%95%99.html">위상수학</a>, <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/15.%20%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%A7%81%EA%B5%90%EC%84%B1.html">내적공간과 직교성</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%85%B8%EB%A6%84%EA%B3%B5%EA%B0%84.html">노름공간</a></li>
+<li><a class="wl wl-stub" href="Banach%20%EA%B3%B5%EA%B0%84.html">Banach 공간</a></li>
+<li><a class="wl wl-stub" href="Hilbert%20%EA%B3%B5%EA%B0%84.html">Hilbert 공간</a></li>
+<li><a class="wl wl-stub" href="Lp%20%EA%B3%B5%EA%B0%84.html">Lp 공간</a>  ·(canonical → <a class="wl" href="39.%20%EC%B8%A1%EB%8F%84%EB%A1%A0.html">39장</a>)</li>
+<li><a class="wl wl-stub" href="%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EC%9D%98%20%EC%99%84%EB%B9%84%ED%99%94.html">내적공간의 완비화</a></li>
+<li><a class="wl wl-stub" href="%EC%A7%81%EA%B5%90%EB%B6%84%ED%95%B4%EC%99%80%20%EC%A0%95%EC%82%AC%EC%98%81%EC%A0%95%EB%A6%AC.html">직교분해와 정사영정리</a></li>
+<li><a class="wl wl-stub" href="%EC%84%A0%ED%98%95%EC%97%B0%EC%82%B0%EC%9E%90.html">선형연산자</a></li>
+<li><a class="wl wl-stub" href="%EC%9C%A0%EA%B3%84%20%EC%84%A0%ED%98%95%EC%97%B0%EC%82%B0%EC%9E%90.html">유계 선형연산자</a></li>
+<li><a class="wl wl-stub" href="%EC%97%B0%EC%82%B0%EC%9E%90%20%EB%85%B8%EB%A6%84.html">연산자 노름</a></li>
+<li><a class="wl wl-stub" href="%EC%8C%8D%EB%8C%80%EA%B3%B5%EA%B0%84%20%28%EB%AC%B4%ED%95%9C%EC%B0%A8%EC%9B%90%29.html">쌍대공간 (무한차원)</a></li>
+<li><a class="wl wl-stub" href="%EC%95%BD%EC%88%98%EB%A0%B4%EA%B3%BC%20%EC%95%BD-%20%EC%88%98%EB%A0%B4.html">약수렴과 약-* 수렴</a></li>
+<li><a class="wl wl-stub" href="Hahn-Banach%20%EC%A0%95%EB%A6%AC.html">Hahn-Banach 정리</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%A0%EB%93%B1%EC%9C%A0%EA%B3%84%EC%84%B1%20%EC%9B%90%EB%A6%AC.html">균등유계성 원리</a></li>
+<li><a class="wl wl-stub" href="%EC%97%B4%EB%A6%B0%EC%82%AC%EC%83%81%20%EC%A0%95%EB%A6%AC.html">열린사상 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%AB%ED%9E%8C%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%A0%95%EB%A6%AC.html">닫힌그래프 정리</a></li>
+<li><a class="wl wl-stub" href="Riesz%20%ED%91%9C%ED%98%84%EC%A0%95%EB%A6%AC.html">Riesz 표현정리</a></li>
+<li><a class="wl wl-stub" href="%EC%BD%A4%ED%8C%A9%ED%8A%B8%20%EC%97%B0%EC%82%B0%EC%9E%90.html">콤팩트 연산자</a></li>
+<li><a class="wl wl-stub" href="%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC%20%EC%9D%B4%EB%A1%A0%20%28%EC%97%B0%EC%82%B0%EC%9E%90%29.html">스펙트럼 이론 (연산자)</a></li>
+<li><a class="wl wl-stub" href="%EC%9E%90%EA%B8%B0%EC%88%98%EB%B0%98%20%EC%97%B0%EC%82%B0%EC%9E%90.html">자기수반 연산자</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%81%EB%B6%84%EC%97%B0%EC%82%B0%EC%9E%90.html">적분연산자</a></li>
+<li><a class="wl wl-stub" href="../Phase-13-%EC%A0%95%EB%B3%B4%2C%20%EA%B8%B0%ED%95%98%2C%20%EC%88%98%EC%86%A1/%EC%9E%AC%EC%83%9D%EC%BB%A4%EB%84%90%20Hilbert%20%EA%B3%B5%EA%B0%84.html">재생커널 Hilbert 공간</a>  ·(canonical → <a class="wl" href="../Phase-13-%EC%A0%95%EB%B3%B4%2C%20%EA%B8%B0%ED%95%98%2C%20%EC%88%98%EC%86%A1/65.%20%EC%BB%A4%EB%84%90%EA%B3%BC%20RKHS.html">65장</a>)</li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

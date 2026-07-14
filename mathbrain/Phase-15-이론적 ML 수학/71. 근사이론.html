@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>71. 근사이론 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="71. 근사이론 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">이론적 ML 수학</a></div><h1>71. 근사이론</h1><div class="post-meta"><span>원자 노트 14개 · 작성 0개</span></div><blockquote><p>Phase 15 · 이론적 ML 수학 · 선행: <a class="wl" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/08.%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EA%B8%89%EC%88%98.html">수열과 급수</a>, <a class="wl" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/42.%20%ED%95%A8%EC%88%98%ED%95%B4%EC%84%9D.html">함수해석</a>, <a class="wl" href="../Phase-09-%ED%91%B8%EB%A6%AC%EC%97%90%20%ED%95%B4%EC%84%9D%EA%B3%BC%20%EC%8B%A0%ED%98%B8%EC%B2%98%EB%A6%AC/50.%20%ED%91%B8%EB%A6%AC%EC%97%90%20%ED%95%B4%EC%84%9D.html">푸리에 해석</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%ED%95%A8%EC%88%98%EA%B7%BC%EC%82%AC.html">함수근사</a></li>
+<li><a class="wl wl-stub" href="%EB%8B%A4%ED%95%AD%EA%B7%BC%EC%82%AC.html">다항근사</a></li>
+<li><a class="wl wl-stub" href="Weierstrass%20%EA%B7%BC%EC%82%AC%EC%A0%95%EB%A6%AC.html">Weierstrass 근사정리</a></li>
+<li><a class="wl wl-stub" href="Stone-Weierstrass%20%EC%A0%95%EB%A6%AC.html">Stone-Weierstrass 정리</a></li>
+<li><a class="wl wl-stub" href="Fourier%20approximation.html">Fourier approximation</a></li>
+<li><a class="wl wl-stub" href="Spline%20approximation.html">Spline approximation</a></li>
+<li><a class="wl wl-stub" href="Wavelet%20approximation.html">Wavelet approximation</a></li>
+<li><a class="wl wl-stub" href="Universal%20approximation%20theorem.html">Universal approximation theorem</a></li>
+<li><a class="wl wl-stub" href="Barron%20space.html">Barron space</a></li>
+<li><a class="wl wl-stub" href="Approximation%20rate.html">Approximation rate</a></li>
+<li><a class="wl wl-stub" href="../Hub-AI%20in%20Math%20%ED%97%88%EB%B8%8C/Curse%20of%20dimensionality.html">Curse of dimensionality</a>  ·(canonical → <a class="wl" href="../Hub-AI%20in%20Math%20%ED%97%88%EB%B8%8C/78.%20AI%20in%20Math%20%ED%97%88%EB%B8%8C.html">78장</a>)</li>
+<li><a class="wl wl-stub" href="Sparse%20approximation.html">Sparse approximation</a></li>
+<li><a class="wl wl-stub" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/Low-rank%20approximation.html">Low-rank approximation</a>  ·(canonical → <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/23.%20%ED%8A%B9%EC%9D%B4%EA%B0%92%20%EB%B6%84%ED%95%B4%EC%99%80%20%EC%A0%80%EA%B3%84%EC%88%98%20%EA%B5%AC%EC%A1%B0.html">23장</a>)</li>
+<li><a class="wl wl-stub" href="Tensor%20decomposition.html">Tensor decomposition</a>  ·(canonical → <a class="wl" href="72.%20%ED%85%90%EC%84%9C%EC%99%80%20%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98.html">72장</a>)</li>
+<li><a class="wl wl-stub" href="Kolmogorov%20n-width.html">Kolmogorov n-width</a></li>
+<li><a class="wl wl-stub" href="Expressivity%20of%20neural%20networks.html">Expressivity of neural networks</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

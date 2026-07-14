@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>56. 최적화 알고리즘 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="56. 최적화 알고리즘 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">최적화</a></div><h1>56. 최적화 알고리즘</h1><div class="post-meta"><span>원자 노트 16개 · 작성 0개</span></div><blockquote><p>Phase 11 · 최적화 · 선행: <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/25.%20%ED%96%89%EB%A0%AC%EB%AF%B8%EB%B6%84%20%28Matrix%20Calculus.html">행렬미분 (Matrix Calculus</a>, <a class="wl" href="55.%20%EB%B3%BC%EB%A1%9D%ED%95%B4%EC%84%9D.html">볼록해석</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%AC%B8%EC%A0%9C%EC%9D%98%20%EA%B5%AC%EC%84%B1%20%28%EB%AA%A9%EC%A0%81%ED%95%A8%EC%88%98%2C%20%EC%A0%9C%EC%95%BD%2C%20feasible%20set%29.html">최적화 문제의 구성 (목적함수, 제약, feasible set)</a></li>
+<li><a class="wl wl-stub" href="%EA%B5%AD%EC%86%8C%ED%95%B4%EC%99%80%20%EC%A0%84%EC%97%AD%ED%95%B4.html">국소해와 전역해</a></li>
+<li><a class="wl wl-stub" href="Gradient%20descent.html">Gradient descent</a></li>
+<li><a class="wl wl-stub" href="%EC%88%98%EB%A0%B4%EB%A5%A0%20%28%EB%B3%BC%EB%A1%9D-%EA%B0%95%EB%B3%BC%EB%A1%9D%20%EC%BC%80%EC%9D%B4%EC%8A%A4%29.html">수렴률 (볼록/강볼록 케이스)</a></li>
+<li><a class="wl wl-stub" href="Line%20search.html">Line search</a></li>
+<li><a class="wl wl-stub" href="Trust%20region.html">Trust region</a></li>
+<li><a class="wl wl-stub" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/Newton%20method%20%28%EB%8B%A4%EB%B3%80%EC%88%98%29.html">Newton method (다변수)</a>  ·(canonical → <a class="wl" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/06.%20%EB%AF%B8%EB%B6%84%EC%9D%98%20%EC%9D%91%EC%9A%A9.html">06장</a>)</li>
+<li><a class="wl wl-stub" href="Quasi-Newton%20method.html">Quasi-Newton method</a></li>
+<li><a class="wl wl-stub" href="BFGS%EC%99%80%20L-BFGS.html">BFGS와 L-BFGS</a></li>
+<li><a class="wl wl-stub" href="Coordinate%20descent.html">Coordinate descent</a></li>
+<li><a class="wl wl-stub" href="Projected%20gradient.html">Projected gradient</a></li>
+<li><a class="wl wl-stub" href="Proximal%20gradient.html">Proximal gradient</a></li>
+<li><a class="wl wl-stub" href="Mirror%20descent.html">Mirror descent</a></li>
+<li><a class="wl wl-stub" href="Subgradient%20method.html">Subgradient method</a></li>
+<li><a class="wl wl-stub" href="Duality%20%EA%B8%B0%EB%B0%98%20%EB%B0%A9%EB%B2%95%20%28primal-dual%29.html">Duality 기반 방법 (primal-dual)</a></li>
+<li><a class="wl wl-stub" href="ADMM.html">ADMM</a></li>
+<li><a class="wl wl-stub" href="Saddle%20point%20%EB%AC%B8%EC%A0%9C.html">Saddle point 문제</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

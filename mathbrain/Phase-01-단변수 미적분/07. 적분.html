@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>07. 적분 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="07. 적분 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">단변수 미적분</a></div><h1>07. 적분</h1><div class="post-meta"><span>원자 노트 22개 · 작성 0개</span></div><blockquote><p>Phase 1 · 단변수 미적분 · 선행: <a class="wl" href="05.%20%EB%AF%B8%EB%B6%84.html">미분</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%B6%80%EC%A0%95%EC%A0%81%EB%B6%84%EA%B3%BC%20%EC%9B%90%EC%8B%9C%ED%95%A8%EC%88%98.html">부정적분과 원시함수</a></li>
+<li><a class="wl wl-stub" href="%EB%A6%AC%EB%A7%8C%20%ED%95%A9.html">리만 합</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%95%EC%A0%81%EB%B6%84.html">정적분</a></li>
+<li><a class="wl wl-stub" href="%EB%A6%AC%EB%A7%8C%20%EC%A0%81%EB%B6%84%EA%B3%BC%20%EC%A0%81%EB%B6%84%EA%B0%80%EB%8A%A5%EC%84%B1.html">리만 적분과 적분가능성</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99%EC%9D%98%20%EA%B8%B0%EB%B3%B8%EC%A0%95%EB%A6%AC%201.html">미적분학의 기본정리 1</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99%EC%9D%98%20%EA%B8%B0%EB%B3%B8%EC%A0%95%EB%A6%AC%202.html">미적분학의 기본정리 2</a></li>
+<li><a class="wl wl-stub" href="%EC%B9%98%ED%99%98%EC%A0%81%EB%B6%84.html">치환적분</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%80%EB%B6%84%EC%A0%81%EB%B6%84.html">부분적분</a></li>
+<li><a class="wl wl-stub" href="%EC%82%BC%EA%B0%81%EC%B9%98%ED%99%98.html">삼각치환</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%80%EB%B6%84%EB%B6%84%EC%88%98.html">부분분수</a></li>
+<li><a class="wl wl-stub" href="%EC%9C%A0%EB%A6%AC%ED%95%A8%EC%88%98%20%EC%A0%81%EB%B6%84.html">유리함수 적분</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%B4%EC%83%81%EC%A0%81%EB%B6%84.html">이상적분</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%B4%EC%83%81%EC%A0%81%EB%B6%84%EC%9D%98%20%EC%88%98%EB%A0%B4%EA%B3%BC%20%EB%B9%84%EA%B5%90%ED%8C%90%EC%A0%95%EB%B2%95.html">이상적분의 수렴과 비교판정법</a></li>
+<li><a class="wl wl-stub" href="%EA%B0%90%EB%A7%88%ED%95%A8%EC%88%98.html">감마함수</a></li>
+<li><a class="wl wl-stub" href="%EB%B2%A0%ED%83%80%ED%95%A8%EC%88%98.html">베타함수</a></li>
+<li><a class="wl wl-stub" href="%EA%B0%80%EC%9A%B0%EC%8B%9C%EC%95%88%20%EC%A0%81%EB%B6%84.html">가우시안 적분</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%81%EB%B6%84%EC%9D%98%20%ED%8F%89%EA%B7%A0%EA%B0%92%20%EC%A0%95%EB%A6%AC.html">적분의 평균값 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%9D%BC%EC%9D%B4%ED%94%84%EB%8B%88%EC%B8%A0%20%EC%A0%81%EB%B6%84%20%EA%B7%9C%EC%B9%99%20%28%EC%A0%81%EB%B6%84%20%EA%B8%B0%ED%98%B8%20%EC%95%84%EB%9E%98%20%EB%AF%B8%EB%B6%84%29.html">라이프니츠 적분 규칙 (적분 기호 아래 미분)</a></li>
+<li><a class="wl wl-stub" href="%EB%A9%B4%EC%A0%81.html">면적</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%80%ED%94%BC%EC%99%80%20%ED%9A%8C%EC%A0%84%EC%B2%B4%20%EB%B6%80%ED%94%BC.html">부피와 회전체 부피</a></li>
+<li><a class="wl wl-stub" href="%ED%98%B8%EC%9D%98%20%EA%B8%B8%EC%9D%B4.html">호의 길이</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%A1%EB%A9%B4%EC%A0%81.html">곡면적</a></li>
+<li><a class="wl wl-stub" href="../Phase-10-%EC%88%98%EC%B9%98/%EC%88%98%EC%B9%98%EC%A0%81%EB%B6%84.html">수치적분</a>  ·(canonical → <a class="wl" href="../Phase-10-%EC%88%98%EC%B9%98/53.%20%EC%88%98%EC%B9%98%ED%95%B4%EC%84%9D.html">53장</a>)</li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>21. 대칭행렬과 이차형식 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="21. 대칭행렬과 이차형식 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">선형대수 II · 행렬해석</a></div><h1>21. 대칭행렬과 이차형식</h1><div class="post-meta"><span>원자 노트 13개 · 작성 0개</span></div><blockquote><p>Phase 4 · 선형대수 II · 행렬해석 · 선행: <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/14.%20%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC%20%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC.html">고유값과 스펙트럼</a>, <a class="wl" href="../Phase-02-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20I/15.%20%EB%82%B4%EC%A0%81%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%A7%81%EA%B5%90%EC%84%B1.html">내적공간과 직교성</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%8C%80%EC%B9%AD%ED%96%89%EB%A0%AC%EA%B3%BC%20%EC%97%90%EB%A5%B4%EB%AF%B8%ED%8A%B8%20%ED%96%89%EB%A0%AC.html">대칭행렬과 에르미트 행렬</a></li>
+<li><a class="wl wl-stub" href="%EC%A7%81%EA%B5%90%EB%8C%80%EA%B0%81%ED%99%94.html">직교대각화</a></li>
+<li><a class="wl wl-stub" href="%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC%20%EC%A0%95%EB%A6%AC.html">스펙트럼 정리</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%B4%EC%B0%A8%ED%98%95%EC%8B%9D.html">이차형식</a></li>
+<li><a class="wl wl-stub" href="%EC%96%91%EC%9D%98%20%EC%A0%95%EB%B6%80%ED%98%B8%20-%20%EC%96%91%EC%9D%98%20%EC%A4%80%EC%A0%95%EB%B6%80%ED%98%B8%20-%20%EC%9D%8C%EC%9D%98%20%EC%A0%95%EB%B6%80%ED%98%B8%20-%20%EB%B6%80%EC%A0%95%EB%B6%80%ED%98%B8.html">양의 정부호 / 양의 준정부호 / 음의 정부호 / 부정부호</a></li>
+<li><a class="wl wl-stub" href="%EC%A3%BC%EC%B6%95%EC%A0%95%EB%A6%AC.html">주축정리</a></li>
+<li><a class="wl wl-stub" href="%EC%8B%A4%EB%B2%A0%EC%8A%A4%ED%84%B0%20%ED%8C%90%EC%A0%95%EB%B2%95.html">실베스터 판정법</a></li>
+<li><a class="wl wl-stub" href="Cholesky%20%EB%B6%84%ED%95%B4.html">Cholesky 분해</a></li>
+<li><a class="wl wl-stub" href="%EB%A0%88%EC%9D%BC%EB%A6%AC%20%EB%AA%AB.html">레일리 몫</a></li>
+<li><a class="wl wl-stub" href="Courant-Fischer%20min-max%20%EC%A0%95%EB%A6%AC.html">Courant-Fischer min-max 정리</a></li>
+<li><a class="wl wl-stub" href="Weyl%20%EB%B6%80%EB%93%B1%EC%8B%9D%20%28%EA%B3%A0%EC%9C%A0%EA%B0%92%20%EC%84%AD%EB%8F%99%29.html">Weyl 부등식 (고유값 섭동)</a></li>
+<li><a class="wl wl-stub" href="%EC%B5%9C%EB%8C%80%EC%B5%9C%EC%86%8C%20%EC%A0%95%EB%A6%AC%20%28%EA%B3%A0%EC%9C%A0%EA%B0%92%29.html">최대최소 정리 (고유값)</a></li>
+<li><a class="wl wl-stub" href="%ED%96%89%EB%A0%AC%20%EB%B6%80%EB%93%B1%EC%8B%9D%EA%B3%BC%20Loewner%20order.html">행렬 부등식과 Loewner order</a></li>
+<li><a class="wl wl-stub" href="../Phase-05-%ED%99%95%EB%A5%A0/%EA%B3%B5%EB%B6%84%EC%82%B0%20%ED%96%89%EB%A0%AC%C2%B7%EC%A0%95%EB%B0%80%EB%8F%84%20%ED%96%89%EB%A0%AC%C2%B7Mahalanobis%20%EA%B1%B0%EB%A6%AC.html">공분산 행렬·정밀도 행렬·Mahalanobis 거리</a>  ·(canonical → <a class="wl" href="../Phase-05-%ED%99%95%EB%A5%A0/28.%20%EA%B8%B0%EB%8C%93%EA%B0%92%EA%B3%BC%20%EB%AA%A8%EB%A9%98%ED%8A%B8.html">28장</a>)</li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>55. 볼록해석 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="55. 볼록해석 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">최적화</a></div><h1>55. 볼록해석</h1><div class="post-meta"><span>원자 노트 22개 · 작성 0개</span></div><blockquote><p>Phase 11 · 최적화 · 선행: <a class="wl" href="../Phase-03-%EB%8B%A4%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/18.%20%EB%8B%A4%EB%B3%80%EC%88%98%20%EC%B5%9C%EC%A0%81%ED%99%94.html">다변수 최적화</a>, <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/22.%20%EB%85%B8%EB%A6%84%EA%B3%BC%20%ED%96%89%EB%A0%AC%EB%85%B8%EB%A6%84.html">노름과 행렬노름</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%B3%BC%EB%A1%9D%EC%A7%91%ED%95%A9.html">볼록집합</a></li>
+<li><a class="wl wl-stub" href="Affine%20set.html">Affine set</a></li>
+<li><a class="wl wl-stub" href="Convex%20hull.html">Convex hull</a></li>
+<li><a class="wl wl-stub" href="Cone%EA%B3%BC%20convex%20cone.html">Cone과 convex cone</a></li>
+<li><a class="wl wl-stub" href="Simplex%EC%99%80%20polytope.html">Simplex와 polytope</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%84%EB%A6%AC%EC%B4%88%ED%8F%89%EB%A9%B4%20%EC%A0%95%EB%A6%AC.html">분리초평면 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%B0%9B%EC%B9%A8%EC%B4%88%ED%8F%89%EB%A9%B4%20%EC%A0%95%EB%A6%AC.html">받침초평면 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%B3%BC%EB%A1%9D%ED%95%A8%EC%88%98.html">볼록함수</a></li>
+<li><a class="wl wl-stub" href="Strict%20convexity%EC%99%80%20strong%20convexity.html">Strict convexity와 strong convexity</a></li>
+<li><a class="wl wl-stub" href="Smoothness.html">Smoothness</a></li>
+<li><a class="wl wl-stub" href="Subgradient%EC%99%80%20subdifferential.html">Subgradient와 subdifferential</a></li>
+<li><a class="wl wl-stub" href="Fenchel%20conjugate.html">Fenchel conjugate</a></li>
+<li><a class="wl wl-stub" href="Fenchel%20duality.html">Fenchel duality</a></li>
+<li><a class="wl wl-stub" href="Epigraph.html">Epigraph</a></li>
+<li><a class="wl wl-stub" href="Proximal%20operator.html">Proximal operator</a></li>
+<li><a class="wl wl-stub" href="Moreau%20envelope.html">Moreau envelope</a></li>
+<li><a class="wl wl-stub" href="Bregman%20divergence.html">Bregman divergence</a></li>
+<li><a class="wl wl-stub" href="KKT%20%EC%A1%B0%EA%B1%B4.html">KKT 조건</a></li>
+<li><a class="wl wl-stub" href="Slater%20condition.html">Slater condition</a></li>
+<li><a class="wl wl-stub" href="Strong%20duality.html">Strong duality</a></li>
+<li><a class="wl wl-stub" href="Convex%20relaxation.html">Convex relaxation</a></li>
+<li><a class="wl wl-stub" href="Semidefinite%20programming.html">Semidefinite programming</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

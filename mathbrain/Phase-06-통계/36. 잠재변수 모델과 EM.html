@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>36. 잠재변수 모델과 EM · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="36. 잠재변수 모델과 EM · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">통계</a></div><h1>36. 잠재변수 모델과 EM</h1><div class="post-meta"><span>원자 노트 12개 · 작성 0개</span></div><blockquote><p>Phase 6 · 통계 · 선행: <a class="wl" href="32.%20%EC%A0%90%EC%B6%94%EC%A0%95.html">점추정</a>, <a class="wl" href="../Phase-05-%ED%99%95%EB%A5%A0/27.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC.html">주요 확률분포</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%9E%A0%EC%9E%AC%EB%B3%80%EC%88%98%20%EB%AA%A8%EB%8D%B8.html">잠재변수 모델</a></li>
+<li><a class="wl wl-stub" href="%ED%98%BC%ED%95%A9%EB%AA%A8%EB%8D%B8%EA%B3%BC%20GMM.html">혼합모델과 GMM</a></li>
+<li><a class="wl wl-stub" href="EM%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.html">EM 알고리즘</a></li>
+<li><a class="wl wl-stub" href="E-step%EA%B3%BC%20M-step.html">E-step과 M-step</a></li>
+<li><a class="wl wl-stub" href="EM%EC%9D%98%20%EB%8B%A8%EC%A1%B0%20%EC%A6%9D%EA%B0%80%EC%84%B1%20%28Jensen%20%EB%85%BC%EC%A6%9D%29.html">EM의 단조 증가성 (Jensen 논증)</a></li>
+<li><a class="wl wl-stub" href="EM%EA%B3%BC%20ELBO%EC%9D%98%20%EA%B4%80%EA%B3%84.html">EM과 ELBO의 관계</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%80%EB%8B%89%20%EB%A7%88%EB%A5%B4%EC%BD%94%ED%94%84%20%EB%AA%A8%EB%8D%B8%20%28HMM%29.html">은닉 마르코프 모델 (HMM)</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%84%EB%B0%A9-%ED%9B%84%EB%B0%A9%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.html">전방-후방 알고리즘</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%ED%84%B0%EB%B9%84%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.html">비터비 알고리즘</a></li>
+<li><a class="wl wl-stub" href="%EC%83%81%ED%83%9C%EA%B3%B5%EA%B0%84%20%EB%AA%A8%EB%8D%B8.html">상태공간 모델</a></li>
+<li><a class="wl wl-stub" href="%EC%B9%BC%EB%A7%8C%20%ED%95%84%ED%84%B0.html">칼만 필터</a></li>
+<li><a class="wl wl-stub" href="%EA%B2%B0%EC%B8%A1%20%EB%A9%94%EC%BB%A4%EB%8B%88%EC%A6%98%20%28MCAR%20-%20MAR%20-%20MNAR%29.html">결측 메커니즘 (MCAR / MAR / MNAR)</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

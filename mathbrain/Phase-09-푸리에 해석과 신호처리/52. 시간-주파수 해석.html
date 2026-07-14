@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>52. 시간-주파수 해석 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="52. 시간-주파수 해석 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">푸리에 해석과 신호처리</a></div><h1>52. 시간-주파수 해석</h1><div class="post-meta"><span>원자 노트 15개 · 작성 0개</span></div><blockquote><p>Phase 9 · 푸리에 해석과 신호처리 · 선행: <a class="wl" href="51.%20%EC%8B%A0%ED%98%B8%EC%B2%98%EB%A6%AC.html">신호처리</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EC%9C%88%EB%8F%84%EC%9A%B0%20%ED%95%A8%EC%88%98%20%28%EC%A7%81%EC%82%AC%EA%B0%81%2C%20Hann%2C%20Hamming%2C%20%EA%B0%80%EC%9A%B0%EC%8B%9C%EC%95%88%29.html">윈도우 함수 (직사각, Hann, Hamming, 가우시안)</a></li>
+<li><a class="wl wl-stub" href="%EC%9C%88%EB%8F%84%EC%9A%B0%EC%99%80%20%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%9F%BC%20%EB%88%84%EC%84%A4%EC%9D%98%20%EA%B4%80%EA%B3%84.html">윈도우와 스펙트럼 누설의 관계</a></li>
+<li><a class="wl wl-stub" href="STFT%20%EC%A0%95%EC%9D%98.html">STFT 정의</a></li>
+<li><a class="wl wl-stub" href="%EC%97%AD%20STFT%EC%99%80%20COLA%20%EC%A1%B0%EA%B1%B4.html">역 STFT와 COLA 조건</a></li>
+<li><a class="wl wl-stub" href="%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%A1%9C%EA%B7%B8%EB%9E%A8.html">스펙트로그램</a></li>
+<li><a class="wl wl-stub" href="%EC%8B%9C%EA%B0%84-%EC%A3%BC%ED%8C%8C%EC%88%98%20%ED%95%B4%EC%83%81%EB%8F%84%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84.html">시간-주파수 해상도 트레이드오프</a></li>
+<li><a class="wl wl-stub" href="%EA%B0%80%EB%B3%B4%EB%A5%B4%20%ED%95%9C%EA%B3%84%20%28%EB%B6%88%ED%99%95%EC%A0%95%EC%84%B1%20%EC%9B%90%EB%A6%AC%EC%9D%98%20%EC%8B%9C%EA%B0%84-%EC%A3%BC%ED%8C%8C%EC%88%98%20%ED%98%95%ED%83%9C%29.html">가보르 한계 (불확정성 원리의 시간-주파수 형태)</a></li>
+<li><a class="wl wl-stub" href="Gabor%20%EB%B3%80%ED%99%98.html">Gabor 변환</a></li>
+<li><a class="wl wl-stub" href="%EC%9B%A8%EC%9D%B4%EB%B8%94%EB%A6%BF%20%EB%B3%80%ED%99%98%20%28CWT%2C%20DWT%29.html">웨이블릿 변환 (CWT, DWT)</a></li>
+<li><a class="wl wl-stub" href="Haar%20%EC%9B%A8%EC%9D%B4%EB%B8%94%EB%A6%BF%2C%20Morlet%20%EC%9B%A8%EC%9D%B4%EB%B8%94%EB%A6%BF.html">Haar 웨이블릿, Morlet 웨이블릿</a></li>
+<li><a class="wl wl-stub" href="%EB%A9%80%ED%8B%B0%ED%95%B4%EC%83%81%EB%8F%84%20%EB%B6%84%EC%84%9D.html">멀티해상도 분석</a></li>
+<li><a class="wl wl-stub" href="%EB%A9%9C%20%EC%8A%A4%ED%8E%99%ED%8A%B8%EB%A1%9C%EA%B7%B8%EB%9E%A8.html">멜 스펙트로그램</a></li>
+<li><a class="wl wl-stub" href="Cepstrum.html">Cepstrum</a></li>
+<li><a class="wl wl-stub" href="%EB%B9%84%EC%A0%95%EC%83%81%20%EC%8B%A0%ED%98%B8%20%ED%95%B4%EC%84%9D%20%EC%A0%84%EB%9E%B5.html">비정상 신호 해석 전략</a></li>
+<li><a class="wl wl-stub" href="STFT%20vs%20%EC%9B%A8%EC%9D%B4%EB%B8%94%EB%A6%BF%20%EB%B9%84%EA%B5%90.html">STFT vs 웨이블릿 비교</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>65. 커널과 RKHS · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="65. 커널과 RKHS · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">정보, 기하, 수송</a></div><h1>65. 커널과 RKHS</h1><div class="post-meta"><span>원자 노트 16개 · 작성 0개</span></div><blockquote><p>Phase 13 · 정보, 기하, 수송 · 선행: <a class="wl" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/42.%20%ED%95%A8%EC%88%98%ED%95%B4%EC%84%9D.html">함수해석</a>, <a class="wl" href="../Phase-04-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%20II%20%C2%B7%20%ED%96%89%EB%A0%AC%ED%95%B4%EC%84%9D/21.%20%EB%8C%80%EC%B9%AD%ED%96%89%EB%A0%AC%EA%B3%BC%20%EC%9D%B4%EC%B0%A8%ED%98%95%EC%8B%9D.html">대칭행렬과 이차형식</a>, <a class="wl" href="../Phase-05-%ED%99%95%EB%A5%A0/27.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC.html">주요 확률분포</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="Positive%20definite%20kernel.html">Positive definite kernel</a></li>
+<li><a class="wl wl-stub" href="Gram%20matrix.html">Gram matrix</a></li>
+<li><a class="wl wl-stub" href="Mercer%20theorem.html">Mercer theorem</a></li>
+<li><a class="wl wl-stub" href="Feature%20map.html">Feature map</a></li>
+<li><a class="wl wl-stub" href="Kernel%20trick.html">Kernel trick</a></li>
+<li><a class="wl wl-stub" href="RKHS.html">RKHS</a></li>
+<li><a class="wl wl-stub" href="Reproducing%20property.html">Reproducing property</a></li>
+<li><a class="wl wl-stub" href="Representer%20theorem.html">Representer theorem</a></li>
+<li><a class="wl wl-stub" href="Kernel%20ridge%20regression.html">Kernel ridge regression</a></li>
+<li><a class="wl wl-stub" href="Gaussian%20process.html">Gaussian process</a></li>
+<li><a class="wl wl-stub" href="Covariance%20kernel.html">Covariance kernel</a></li>
+<li><a class="wl wl-stub" href="../Phase-15-%EC%9D%B4%EB%A1%A0%EC%A0%81%20ML%20%EC%88%98%ED%95%99/Neural%20Tangent%20Kernel.html">Neural Tangent Kernel</a>  ·(canonical → <a class="wl" href="../Phase-15-%EC%9D%B4%EB%A1%A0%EC%A0%81%20ML%20%EC%88%98%ED%95%99/70.%20%ED%95%99%EC%8A%B5%EC%9D%B4%EB%A1%A0.html">70장</a>)</li>
+<li><a class="wl wl-stub" href="Integral%20operator.html">Integral operator</a></li>
+<li><a class="wl wl-stub" href="Kernel%20PCA.html">Kernel PCA</a></li>
+<li><a class="wl wl-stub" href="MMD.html">MMD</a></li>
+<li><a class="wl wl-stub" href="Kernel%20mean%20embedding.html">Kernel mean embedding</a></li>
+<li><a class="wl wl-stub" href="Characteristic%20kernel.html">Characteristic kernel</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

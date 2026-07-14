@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>26. 확률의 기초 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="26. 확률의 기초 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">확률</a></div><h1>26. 확률의 기초</h1><div class="post-meta"><span>원자 노트 19개 · 작성 0개</span></div><blockquote><p>Phase 5 · 확률 · 선행: <a class="wl" href="../Phase-00-%EC%88%98%ED%95%99%20%EA%B8%B0%EC%B4%88/02.%20%EC%A7%91%ED%95%A9%EA%B3%BC%20%ED%95%A8%EC%88%98.html">집합과 함수</a>, <a class="wl" href="../Phase-01-%EB%8B%A8%EB%B3%80%EC%88%98%20%EB%AF%B8%EC%A0%81%EB%B6%84/07.%20%EC%A0%81%EB%B6%84.html">적분</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%ED%91%9C%EB%B3%B8%EA%B3%B5%EA%B0%84%EA%B3%BC%20%EC%82%AC%EA%B1%B4.html">표본공간과 사건</a></li>
+<li><a class="wl wl-stub" href="%EC%82%AC%EA%B1%B4%EC%97%B0%EC%82%B0.html">사건연산</a></li>
+<li><a class="wl wl-stub" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/%EC%8B%9C%EA%B7%B8%EB%A7%88%20%EB%8C%80%EC%88%98.html">시그마 대수</a>  ·(canonical → <a class="wl" href="../Phase-07-%ED%95%B4%EC%84%9D%ED%95%99%20%EC%8B%AC%ED%99%94%20%28%EB%B3%91%EB%A0%AC%20%ED%8A%B8%EB%9E%99%29/39.%20%EC%B8%A1%EB%8F%84%EB%A1%A0.html">39장</a>)</li>
+<li><a class="wl wl-stub" href="%ED%99%95%EB%A5%A0%EC%B8%A1%EB%8F%84.html">확률측도</a></li>
+<li><a class="wl wl-stub" href="%EC%BD%9C%EB%AA%A8%EA%B3%A0%EB%A1%9C%ED%94%84%20%EA%B3%B5%EB%A6%AC.html">콜모고로프 공리</a></li>
+<li><a class="wl wl-stub" href="%EC%A1%B0%EA%B1%B4%EB%B6%80%ED%99%95%EB%A5%A0.html">조건부확률</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%B1%EC%85%88%EB%B2%95%EC%B9%99.html">곱셈법칙</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%84%ED%99%95%EB%A5%A0%20%EB%B2%95%EC%B9%99.html">전확률 법칙</a></li>
+<li><a class="wl wl-stub" href="%EB%B2%A0%EC%9D%B4%EC%A6%88%20%EC%A0%95%EB%A6%AC.html">베이즈 정리</a></li>
+<li><a class="wl wl-stub" href="%EB%8F%85%EB%A6%BD.html">독립</a></li>
+<li><a class="wl wl-stub" href="%EC%A1%B0%EA%B1%B4%EB%B6%80%EB%8F%85%EB%A6%BD.html">조건부독립</a></li>
+<li><a class="wl wl-stub" href="%EA%B5%90%ED%99%98%EA%B0%80%EB%8A%A5%EC%84%B1.html">교환가능성</a></li>
+<li><a class="wl wl-stub" href="%ED%99%95%EB%A5%A0%EB%B3%80%EC%88%98.html">확률변수</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%B4%EC%82%B0%20%ED%99%95%EB%A5%A0%EB%B3%80%EC%88%98%EC%99%80%20%EC%97%B0%EC%86%8D%20%ED%99%95%EB%A5%A0%EB%B3%80%EC%88%98.html">이산 확률변수와 연속 확률변수</a></li>
+<li><a class="wl wl-stub" href="CDF%2C%20PMF%2C%20PDF.html">CDF, PMF, PDF</a></li>
+<li><a class="wl wl-stub" href="%EB%B6%84%EC%9C%84%EC%88%98.html">분위수</a></li>
+<li><a class="wl wl-stub" href="%ED%99%95%EB%A5%A0%EB%B3%80%EC%88%98%EC%9D%98%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%B3%80%EC%88%98%EB%B3%80%ED%99%98.html">확률변수의 함수와 변수변환</a></li>
+<li><a class="wl wl-stub" href="%EA%B2%B0%ED%95%A9%EB%B6%84%ED%8F%AC.html">결합분포</a></li>
+<li><a class="wl wl-stub" href="%EC%A3%BC%EB%B3%80%EB%B6%84%ED%8F%AC.html">주변분포</a></li>
+<li><a class="wl wl-stub" href="%EC%A1%B0%EA%B1%B4%EB%B6%80%EB%B6%84%ED%8F%AC.html">조건부분포</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

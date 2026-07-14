@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05. 미분 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="05. 미분 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">단변수 미적분</a></div><h1>05. 미분</h1><div class="post-meta"><span>원자 노트 22개 · 작성 0개</span></div><blockquote><p>Phase 1 · 단변수 미적분 · 선행: <a class="wl" href="04.%20%ED%95%A8%EC%88%98%EC%99%80%20%EA%B7%B9%ED%95%9C.html">함수와 극한</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EB%B6%84%EA%B3%84%EC%88%98.html">미분계수</a></li>
+<li><a class="wl wl-stub" href="%EB%8F%84%ED%95%A8%EC%88%98.html">도함수</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EB%B6%84%EA%B0%80%EB%8A%A5%EC%84%B1.html">미분가능성</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EB%B6%84%EA%B0%80%EB%8A%A5%EC%84%B1%EA%B3%BC%20%EC%97%B0%EC%86%8D%EC%84%B1.html">미분가능성과 연속성</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%91%EC%84%A0.html">접선</a></li>
+<li><a class="wl wl-stub" href="%EC%86%8D%EB%8F%84%EC%99%80%20%EB%B3%80%ED%99%94%EC%9C%A8.html">속도와 변화율</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%B1%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">곱의 미분</a></li>
+<li><a class="wl wl-stub" href="%EB%AA%AB%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">몫의 미분</a></li>
+<li><a class="wl wl-stub" href="%EC%B2%B4%EC%9D%B8%EB%A3%B0.html">체인룰</a></li>
+<li><a class="wl wl-stub" href="%EA%B3%A0%EA%B3%84%EB%8F%84%ED%95%A8%EC%88%98.html">고계도함수</a></li>
+<li><a class="wl wl-stub" href="%EC%9D%8C%ED%95%A8%EC%88%98%20%EB%AF%B8%EB%B6%84.html">음함수 미분</a></li>
+<li><a class="wl wl-stub" href="%EC%97%AD%ED%95%A8%EC%88%98%20%EB%AF%B8%EB%B6%84.html">역함수 미분</a></li>
+<li><a class="wl wl-stub" href="%EB%A1%9C%EA%B7%B8%20%EB%AF%B8%EB%B6%84%EB%B2%95.html">로그 미분법</a></li>
+<li><a class="wl wl-stub" href="%EC%A7%80%EC%88%98%ED%95%A8%EC%88%98%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">지수함수의 미분</a></li>
+<li><a class="wl wl-stub" href="%EB%A1%9C%EA%B7%B8%ED%95%A8%EC%88%98%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">로그함수의 미분</a></li>
+<li><a class="wl wl-stub" href="%EC%82%BC%EA%B0%81%ED%95%A8%EC%88%98%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">삼각함수의 미분</a></li>
+<li><a class="wl wl-stub" href="%EC%97%AD%EC%82%BC%EA%B0%81%ED%95%A8%EC%88%98%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">역삼각함수의 미분</a></li>
+<li><a class="wl wl-stub" href="%EC%8C%8D%EA%B3%A1%ED%95%A8%EC%88%98%EC%9D%98%20%EB%AF%B8%EB%B6%84.html">쌍곡함수의 미분</a></li>
+<li><a class="wl wl-stub" href="%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%20%EB%AF%B8%EB%B6%84.html">매개변수 미분</a></li>
+<li><a class="wl wl-stub" href="%EA%B4%80%EB%A0%A8%EC%9C%A8%20%EB%AC%B8%EC%A0%9C.html">관련율 문제</a></li>
+<li><a class="wl wl-stub" href="%EC%84%A0%ED%98%95%EA%B7%BC%EC%82%AC.html">선형근사</a></li>
+<li><a class="wl wl-stub" href="%EB%AF%B8%EB%B6%84%EA%B3%BC%20%EC%98%A4%EC%B0%A8%EC%A0%84%ED%8C%8C.html">미분과 오차전파</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>

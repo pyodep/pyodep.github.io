@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>23. 특이값 분해와 저계수 구조 · mathbrain</title>
+<meta name="description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:title" content="23. 특이값 분해와 저계수 구조 · mathbrain">
+<meta property="og:description" content="AI/ML 연구를 위한 수학 지식 볼트 — 정의·직관·정리·예시로 잇는 원자 노트.">
+<meta property="og:type" content="article">
+<script>(function(){var t=localStorage.getItem('theme');
+if(t)document.documentElement.dataset.theme=t;})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="top">
+  <a class="home" href="../index.html">mathbrain</a>
+  <nav><a href="../map.html">지도</a><a href="../MOC.html">MOC</a></nav>
+  <div class="search-wrap">
+    <input id="q" type="search" placeholder="검색" autocomplete="off">
+    <button id="theme-btn" title="라이트/다크 전환">◐</button>
+    <div id="results"></div>
+  </div>
+</header>
+
+<main>
+<div class="crumb"><a href="index.html">선형대수 II · 행렬해석</a></div><h1>23. 특이값 분해와 저계수 구조</h1><div class="post-meta"><span>원자 노트 12개 · 작성 0개</span></div><blockquote><p>Phase 4 · 선형대수 II · 행렬해석 · 선행: <a class="wl" href="21.%20%EB%8C%80%EC%B9%AD%ED%96%89%EB%A0%AC%EA%B3%BC%20%EC%9D%B4%EC%B0%A8%ED%98%95%EC%8B%9D.html">대칭행렬과 이차형식</a>, <a class="wl" href="22.%20%EB%85%B8%EB%A6%84%EA%B3%BC%20%ED%96%89%EB%A0%AC%EB%85%B8%EB%A6%84.html">노름과 행렬노름</a></p></blockquote>
+<h2 id="원자-노트">원자 노트</h2>
+<ul>
+<li><a class="wl wl-stub" href="%ED%8A%B9%EC%9D%B4%EA%B0%92%EA%B3%BC%20%ED%8A%B9%EC%9D%B4%EB%B2%A1%ED%84%B0.html">특이값과 특이벡터</a></li>
+<li><a class="wl wl-stub" href="SVD%20%28%EC%96%87%EC%9D%80%20SVD%2C%20%EC%99%84%EC%A0%84%20SVD%29.html">SVD (얇은 SVD, 완전 SVD)</a></li>
+<li><a class="wl wl-stub" href="%EA%B7%B9%EB%B6%84%ED%95%B4%20%28polar%20decomposition%29.html">극분해 (polar decomposition)</a></li>
+<li><a class="wl wl-stub" href="%EC%A0%80%EA%B3%84%EC%88%98%20%EA%B7%BC%EC%82%AC.html">저계수 근사</a></li>
+<li><a class="wl wl-stub" href="Eckart-Young%20%EC%A0%95%EB%A6%AC.html">Eckart-Young 정리</a></li>
+<li><a class="wl wl-stub" href="%ED%95%B5%EB%85%B8%EB%A6%84.html">핵노름</a></li>
+<li><a class="wl wl-stub" href="%EC%9C%A0%EC%82%AC%EC%97%AD%ED%96%89%EB%A0%AC%20%28Moore-Penrose%20inverse%29.html">유사역행렬 (Moore-Penrose inverse)</a></li>
+<li><a class="wl wl-stub" href="../Phase-10-%EC%88%98%EC%B9%98/%EC%A1%B0%EA%B1%B4%EC%88%98.html">조건수</a>  ·(canonical → <a class="wl" href="../Phase-10-%EC%88%98%EC%B9%98/53.%20%EC%88%98%EC%B9%98%ED%95%B4%EC%84%9D.html">53장</a>)</li>
+<li><a class="wl wl-stub" href="%ED%96%89%EB%A0%AC%20%EB%9E%AD%ED%81%AC%EC%99%80%20%EC%88%98%EC%B9%98%EC%A0%81%20%EB%9E%AD%ED%81%AC.html">행렬 랭크와 수치적 랭크</a></li>
+<li><a class="wl wl-stub" href="PCA.html">PCA</a></li>
+<li><a class="wl wl-stub" href="%EC%9E%A0%EC%9E%AC%EA%B3%B5%EA%B0%84.html">잠재공간</a></li>
+<li><a class="wl wl-stub" href="%ED%96%89%EB%A0%AC%20%EC%95%95%EC%B6%95%EA%B3%BC%20%EC%A0%80%EB%9E%AD%ED%81%AC%20%ED%96%89%EB%A0%AC.html">행렬 압축과 저랭크 행렬</a></li>
+<li><a class="wl wl-stub" href="randomized%20SVD.html">randomized SVD</a></li>
+</ul>
+</main>
+<footer>
+  <span>mathbrain — 수학 세컨드 브레인</span>
+  <span>typin/Obsidian 마크다운 볼트에서 생성</span>
+</footer>
+<script>window.__ROOT="../";</script>
+<script src="../search-index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/app.js"></script>
+</body></html>
