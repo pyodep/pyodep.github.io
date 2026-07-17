@@ -158,3 +158,25 @@ font-size:14.5px;line-height:1.6}
 footer{max-width:720px;margin:0 auto;padding:20px clamp(16px,4vw,24px) 52px;
 color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
 .katex{font-size:1.04em}
+
+/* 용어집 (glossary) */
+.gl-navwrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+padding:12px 0;margin:4px 0 34px}
+.gl-nav{display:flex;flex-wrap:wrap;gap:3px 13px;font-size:14px}
+.gl-nav+.gl-nav{margin-top:9px}
+.gl-nav a{color:var(--link);text-decoration:none}
+.gl-nav a:hover{text-decoration:underline;text-underline-offset:3px}
+.gl-nav .off{color:var(--line2)}
+.gl-group{margin:26px 0}
+.gl-letter{font-family:"Noto Serif KR",serif;font-size:1.05rem;font-weight:700;
+color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:5px;margin:0 0 12px}
+.gl-group dl{margin:0}
+.gl-group dt{margin:13px 0 2px;font-size:16.5px}
+.gl-group dt a{color:var(--fg);text-decoration:none}
+.gl-group dt a:hover{text-decoration:underline;text-underline-offset:3px}
+.gl-group dt a.stub{color:var(--muted)}
+.gl-aka{color:var(--muted);font-size:13px;font-weight:400;margin-left:6px}
+.gl-group dd{margin:0 0 7px;color:var(--fg2);font-size:14.5px;line-height:1.7}
+.gl-ref{color:var(--muted);font-size:15px;font-weight:400}
+.gl-ref a{color:var(--fg);text-decoration:none}
+.gl-ref a:hover{text-decoration:underline;text-underline-offset:3px}
